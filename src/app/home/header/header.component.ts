@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import{AuthService} from '../auth.service'
+import { Router } from '@angular/router';
+import { DataService } from '../data.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -8,9 +12,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+
+  messages: any[] = [];
+  subscription: Subscription;
+  myData ={ }
+  first_name;
+
+
+  constructor(private _authService : AuthService, private dataService: DataService) {
+
+    this.subscription = this.dataService.getMessage().subscribe(message => {
+      if (message) {
+      this.messages.push(message);
+      console.log(message);
+      
+      this.first_name = message.text.first_name;
+      console.log(this.first_name);
+
+      } else {
+      // clear messages when empty message received
+      this.messages = [];
+      }
+      });
+
+
+   }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }
