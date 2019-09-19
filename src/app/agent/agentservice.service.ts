@@ -16,6 +16,10 @@ _urlDeleteRow = ' http://localhost:8080/users/delete'
 
 _urlView = 'http://localhost:8080/users/show'
 
+_urlcontactus = 'http://localhost:8080/contactus/'
+
+ _urlDeleteApplier = 'http://localhost:8080/contactus/delete'
+
   constructor(private http: HttpClient) { }
 
   registeration(reg: register) {
@@ -33,8 +37,18 @@ _urlView = 'http://localhost:8080/users/show'
 
   view_User(_id : string){
 
-    return this.http.get(this._urlView+ `/${_id}`);
+    return this.http.get(this._urlView + `/${_id}`);
     
+    }
+
+    get_Contact(){
+      return this.http.get(this._urlcontactus);
+    }
+
+
+    delete_applier(_id : string){
+      return this.http.delete(this._urlDeleteApplier + `/${_id}`);
+
     }
 
 

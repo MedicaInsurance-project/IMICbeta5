@@ -13,6 +13,7 @@ import{SideNavComponent} from './side-nav/side-nav.component';
 import { fromEventPattern } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { AppliersComponent } from './appliers/appliers.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ViewUserComponent } from './view-user/view-user.component';
     HeaderComponent,
     ProfileComponent,
     SideNavComponent,
-    ViewUserComponent
+    ViewUserComponent,
+    AppliersComponent
   ],
   imports: [
     CommonModule,

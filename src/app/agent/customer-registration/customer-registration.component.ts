@@ -10,6 +10,12 @@ import { AgentserviceService } from '../agentservice.service';
 export class CustomerRegistrationComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
+  date = new Date();
+
+  maxDate = (new Date().getFullYear()).toString() + "-0" + (new Date().getMonth() + 1).toString() + "-" + (new Date().getDate()).toString();
+
+
+
   constructor(private fb: FormBuilder,
     // tslint:disable-next-line:variable-name
     private routes: Router,
@@ -22,9 +28,11 @@ export class CustomerRegistrationComponent implements OnInit {
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, Validators.minLength(10)]],
+      phone: ['', [Validators.required, Validators.pattern("[0-9]{0-10}")]],
       address: ['', Validators.required],
       adhar: ['', [Validators.required, Validators.minLength(12)]],
+      birthdate:['' ,Validators.required],
+
       policy: ['', Validators.required],
       nominie: ['', Validators.required],
       relation: ['', Validators.required],
@@ -53,7 +61,7 @@ export class CustomerRegistrationComponent implements OnInit {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
     this._agentService.registeration(this.registerForm.value)
       .subscribe(
-        data =>{ console.log(data);
+        data =>{ console.log(this.registerForm.value);
           this.submitted = false;
           if(this.submitted == false)
           this.registerForm.reset();
@@ -69,5 +77,14 @@ export class CustomerRegistrationComponent implements OnInit {
   onReset() {
     this.submitted = false;
     this.registerForm.reset();
+  }
+
+  
+  dateChange(event) {
+    console.log(event);
+
+
+
+
   }
 }

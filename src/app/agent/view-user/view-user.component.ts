@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AgentserviceService } from '../agentservice.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, Validators, FormArray, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-view-user',
@@ -9,7 +10,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ViewUserComponent implements OnInit {
 
-  constructor(private _agentService: AgentserviceService, private routes :Router,private activateRouter : ActivatedRoute) { }
+  constructor(private fb: FormBuilder,
+    private _agentService: AgentserviceService, private routes :Router,private activateRouter : ActivatedRoute) { }
 myData = [];
 
 ngOnInit() {
@@ -25,5 +27,9 @@ error => console.error(error)
 
 
 }
+
+backToDash(){
+
+  this.routes.navigate(['agent/customer-list']);}
 
 }

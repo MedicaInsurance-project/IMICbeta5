@@ -1,8 +1,26 @@
+/* Stackoverflow preview fix, please ignore */
 
-.nav-item{
-    padding:2px;
-    margin-left: 7px;
+.navbar {
+    background-color: whitesmoke;
 }
-#nav_bar{
-    padding: 15px 70px;
+
+.nav_txt {
+    color: black;
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.nav-link {
+    padding-right: .5rem !important;
+    padding-left: .5rem !important;
+}
+
+
+/* Fixes dropdown menus placed on the right side */
+
+.ml-auto .dropdown-menu {
+    left: auto !important;
+    right: 0px;
 }

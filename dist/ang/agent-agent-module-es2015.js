@@ -9,7 +9,20 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<app-side-nav></app-side-nav>\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-header></app-header>\r\n<app-side-nav></app-side-nav>\r\n<router-outlet></router-outlet>\r\n<app-footer></app-footer>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/agent/appliers/appliers.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/agent/appliers/appliers.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <div class=\"container-fluid\" id=\"tb\">\n\n    <table class=\"table\">\n        <thead class=\"thead-dark\">\n            <tr>\n                <!-- <th scope=\"col\">s.no</th>\n\n                <th scope=\"col\">Title</th>\n\n                <th scope=\"col\">First-name</th>\n                <th scope=\"col\">Last-name</th>\n                <th scope=\"col\">Phone</th>\n                <th scope=\"col\">Email</th>\n                <!-- <th>Actions</th> -->\n<!-- </tr>\n</thead>\n<tbody *ngFor=\"let data of myData; let i=index\">\n    <tr>  -->\n<!-- <td>{{i+1 }}</td>\n\n                <td>{{data.fullname}}</td>\n                <td>{{data.email}}</td>\n                <td>{{data.contact}}</td>\n                <td>{{data.message}}</td>\n                <td>\n                    <button type=\"submit\" class=\"btn btn-secondary\" (click)=\"delete(data._id)\">Delete</button> &nbsp;\n                    <button type=\"submit\" class=\"btn btn-primary\"><a  class=\"text-white\" routerLink='viewUser/{{data._id}}'>View</a></button>\n                </td> -->\n\n\n<!-- <div class=\"card\" style=\"width: 18rem;\">\n                    <div class=\"card-header\">\n                        Featured\n                    </div>\n                    <ul class=\"list-group list-group-flush\">\n                        <li class=\"list-group-item\">{{data.fullname}}</li>\n                        <li class=\"list-group-item\">{{data.email}}</li>\n                        <li class=\"list-group-item\">{{data.contact}}</li>\n                        <li class=\"list-group-item\">{{data.message}}</li>\n                        <button class=\"btn btn-secondary\">Delete</button>\n                    </ul>\n                </div>\n            </tr>\n            <br>\n        </tbody>\n    </table>\n</div> -->\n\n<div class=\"card-deck w-75 p-3 mx-auto\" style=\"width: 200px;\" *ngFor=\"let data of myData; let i=index\">\n    <div class=\"card\">\n\n        <div class=\"card-body\">\n            <ul class=\"list-group list-group-flush\">\n                <li class=\"list-group-item\">Name: {{data.fullname}}</li>\n                <li class=\"list-group-item\">Email: {{data.email}}</li>\n                <li class=\"list-group-item\">Phone-no: {{data.contact}}</li>\n                <li class=\"list-group-item\">Message: {{data.message}}</li>\n                <button class=\"btn btn-info\" (click)=\"deleteApplier(data._id)\">Delete</button>\n            </ul>\n        </div>\n    </div>\n\n</div>");
 
 /***/ }),
 
@@ -22,7 +35,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\" id=\"tb\">\r\n\r\n  <table class=\"table\">\r\n  <thead class=\"thead-dark\">\r\n  <tr>\r\n  <th scope=\"col\">s.no</th>\r\n  <th scope=\"col\">id</th>\r\n  <th scope=\"col\">Title</th>\r\n  \r\n  <th scope=\"col\">First-name</th>\r\n  <th scope=\"col\">Last-name</th>\r\n  <th scope=\"col\">Phone</th>\r\n  <th scope=\"col\">Email</th>\r\n  <th>Actions</th>\r\n  </tr>\r\n  </thead>\r\n  <tbody *ngFor=\"let data of myData ;let i=index\">\r\n  <tr>\r\n  <td>{{i+1 }}</td>\r\n  <td>{{data._id }}</td>\r\n  <td>{{data.title}}</td>\r\n  <td>{{data.firstname}}</td>\r\n  <td>{{data.lastname}}</td>\r\n  <td>{{data.phone}}</td>\r\n  <td>{{data.email}}</td>\r\n  <td>\r\n  <button type=\"submit\" class=\"btn btn-secondary\" (click)=\"delete(data._id)\">Delete</button> &nbsp;\r\n  <button type=\"submit\" class=\"btn btn-info\"><a class=\"nav-link\" routerLink='viewUser/{{data._id}}'>View</a></button>\r\n  </td>\r\n  </tr>\r\n  \r\n  </tbody>\r\n  </table>\r\n  </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\" id=\"tb\">\r\n\r\n    <table class=\"table\">\r\n        <thead class=\"thead-dark\">\r\n            <tr>\r\n                <th scope=\"col\">s.no</th>\r\n\r\n                <th scope=\"col\">Title</th>\r\n\r\n                <th scope=\"col\">First-name</th>\r\n                <th scope=\"col\">Last-name</th>\r\n                <th scope=\"col\">Phone</th>\r\n                <th scope=\"col\">Email</th>\r\n                <th>Actions</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody *ngFor=\"let data of myData ;let i=index\">\r\n            <tr>\r\n                <td>{{i+1 }}</td>\r\n\r\n                <td>{{data.title}}</td>\r\n                <td>{{data.firstname}}</td>\r\n                <td>{{data.lastname}}</td>\r\n                <td>{{data.phone}}</td>\r\n                <td>{{data.email}}</td>\r\n                <td>\r\n                    <button type=\"submit\" class=\"btn btn-secondary\" (click)=\"delete(data._id)\">Delete</button> &nbsp;\r\n                    <button type=\"submit\" class=\"btn btn-primary\"><a  class=\"text-white\" routerLink='viewUser/{{data._id}}'>View</a></button>\r\n                </td>\r\n            </tr>\r\n\r\n        </tbody>\r\n    </table>\r\n</div>");
 
 /***/ }),
 
@@ -35,7 +48,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- main app container -->\r\n<div class=\"container-fluid\" id=\"form\">\r\n<div class=\"card m-3\">\r\n    <h5 class=\"card-header\">Add-Details</h5>\r\n    <div class=\"card-body\">\r\n        <form [formGroup]= \"registerForm\" (ngSubmit)=\"onSubmit()\" >\r\n            <div class=\"form-row\">\r\n                <div class=\"form-group col\">\r\n                    <label>Title</label>\r\n                    <select formControlName=\"title\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.title.errors }\">\r\n                        <option value=\"\"></option>\r\n                        <option value=\"Mr\">Mr</option>\r\n                        <option value=\"Mrs\">Mrs</option>\r\n                        <option value=\"Miss\">Miss</option>\r\n                        <option value=\"Ms\">Ms</option>\r\n                    </select>\r\n                    <div *ngIf=\"submitted && f.title?.errors\" class=\"invalid-feedback\">\r\n                        <div *ngIf=\"f.title?.errors.required\">Title is required</div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group col-5\">\r\n                    <label>First Name</label>\r\n                    <input type=\"text\" formControlName=\"firstname\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.firstname.errors }\" />\r\n                    <div *ngIf=\"submitted && f.firstname.errors\" class=\"invalid-feedback\">\r\n                        <div *ngIf=\"f.firstname.errors.required\">First Name is required</div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group col-5\">\r\n                    <label>Last Name</label>\r\n                    <input type=\"text\" formControlName=\"lastname\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.lastname.errors }\" />\r\n                    <div *ngIf=\"submitted && f.lastname.errors\" class=\"invalid-feedback\">\r\n                        <div *ngIf=\"f.lastname.errors.required\">Last Name is required</div>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>Email</label>\r\n                <input type=\"text\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\" />\r\n                <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\r\n                    <div *ngIf=\"f.email.errors.required\">Email is required</div>\r\n                    <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>Phone-no</label>\r\n                <input type=\"text\" formControlName=\"phone\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.phone.errors }\" />\r\n                <div *ngIf=\"submitted && f.phone.errors\" class=\"invalid-feedback\">\r\n                    <div *ngIf=\"f.phone.errors.required\">phone-no is required</div>\r\n                    <div *ngIf=\"f.phone.errors.minlength\">phone-no must be a valid </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>Address</label>\r\n                <input type=\"text\" formControlName=\"address\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\" />\r\n                <div *ngIf=\"submitted && f.address.errors\" class=\"invalid-feedback\">\r\n                    <div *ngIf=\"f.address.errors.required\">address is required</div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>Adhar-no</label>\r\n                <input type=\"text\" formControlName=\"adhar\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.adhar.errors }\" />\r\n                <div *ngIf=\"submitted && f.adhar.errors\" class=\"invalid-feedback\">\r\n                    <div *ngIf=\"f.adhar.errors.required\">Adhar-no is required</div>\r\n                    <div *ngIf=\"f.adhar.errors.minlength\">Adhar-no must be a valid </div>\r\n                </div>\r\n            </div>\r\n            <div class=\"form-group\">\r\n                <label>Policy</label>\r\n                <select formControlName=\"policy\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.policy.errors }\">\r\n                    <option value=\"\"></option>\r\n                    <option value=\"Mr\">fljrb</option>\r\n                    <option value=\"Mrs\">sfnj</option>\r\n                    <option value=\"Miss\">nef j</option>\r\n                    <option value=\"Ms\">fkgkm</option>\r\n                </select>\r\n                <div *ngIf=\"submitted && f.policy.errors\" class=\"invalid-feedback\">\r\n                    <div *ngIf=\"f.policy?.errors.required\">Title is required</div>\r\n                </div>\r\n           </div>\r\n           <div class=\"form-group\">\r\n            <label>Nominie:</label>\r\n            <!-- <button class=\"btn btn-secondary btn-sm m-2\" type=\"button\" (click)=\"addAlternateEmail()\">Add Nominie</button> -->\r\n            <div class=\"input-group\">\r\n            <input  formControlName=\"nominie\" type=\"text\" class=\"form-control\" placeholder=\"enter name\">\r\n            <span class=\"input-group-addon\">-</span>\r\n            <input  formControlName=\"relation\" type=\"text\" class=\"form-control\" placeholder=\"enter relationship\">\r\n          </div>\r\n            <!-- <div  class=\"input-group\" formArrayName=\"alternateEmails\" *ngFor=\"let email of alternateEmails.controls; let i=index\">\r\n              <input type=\"text\" class=\"form-control my-1\" [formControlName]=\"i\"  placeholder=\"enter name\">\r\n              <span class=\"input-group-addon\">-</span>\r\n              <input type=\"text\" class=\"form-control my-1\" [formControlName]=\"i\" placeholder=\"enter relationship\">\r\n            </div> -->\r\n          </div>\r\n            <!-- <div class=\"form-group form-check\">\r\n                <input type=\"checkbox\" formControlName=\"acceptTerms\" id=\"acceptTerms\" class=\"form-check-input\" [ngClass]=\"{ 'is-invalid': submitted && f.acceptTerms.errors }\" />\r\n                <label for=\"acceptTerms\" class=\"form-check-label\">Accept Terms & Conditions</label>\r\n                <div *ngIf=\"submitted && f.acceptTerms.errors\" class=\"invalid-feedback\">Accept Ts & Cs is required</div>\r\n            </div> -->\r\n            \r\n            <div class=\"text-center\">\r\n                <button class=\"btn btn-primary mr-1\">Register</button>\r\n                <button class=\"btn btn-secondary\" type=\"reset\" (click)=\"onReset()\">Cancel</button>\r\n            </div>\r\n        </form>\r\n    </div>\r\n</div>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- main app container -->\r\n<div class=\"container-fluid\" id=\"form\">\r\n    <div class=\"card m-3\">\r\n        <h5 class=\"card-header\">Add-Details</h5>\r\n        <div class=\"card-body\">\r\n            <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n                <div class=\"form-row\">\r\n                    <div class=\"form-group col\">\r\n                        <label>Title</label>\r\n                        <select formControlName=\"title\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.title.errors }\">\r\n                        <option value=\"\"></option>\r\n                        <option value=\"Mr\">Mr</option>\r\n                        <option value=\"Mrs\">Mrs</option>\r\n                        <option value=\"Miss\">Miss</option>\r\n                        <option value=\"Ms\">Ms</option>\r\n                    </select>\r\n                        <div *ngIf=\"submitted && f.title?.errors\" class=\"invalid-feedback\">\r\n                            <div *ngIf=\"f.title?.errors.required\">Title is required</div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-group col-5\">\r\n                        <label>First Name</label>\r\n                        <input type=\"text\" formControlName=\"firstname\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.firstname.errors }\" />\r\n                        <div *ngIf=\"submitted && f.firstname.errors\" class=\"invalid-feedback\">\r\n                            <div *ngIf=\"f.firstname.errors.required\">First Name is required</div>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"form-group col-5\">\r\n                        <label>Last Name</label>\r\n                        <input type=\"text\" formControlName=\"lastname\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.lastname.errors }\" />\r\n                        <div *ngIf=\"submitted && f.lastname.errors\" class=\"invalid-feedback\">\r\n                            <div *ngIf=\"f.lastname.errors.required\">Last Name is required</div>\r\n                        </div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label>Email</label>\r\n                    <input type=\"text\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\" />\r\n                    <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\r\n                        <div *ngIf=\"f.email.errors.required\">Email is required</div>\r\n                        <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label>Phone-no</label>\r\n                    <input type=\"text\" formControlName=\"phone\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.phone.errors }\" minlength=\"10\">\r\n\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label>Address</label>\r\n                    <input type=\"text\" formControlName=\"address\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\" />\r\n                    <div *ngIf=\"submitted && f.address.errors\" class=\"invalid-feedback\">\r\n                        <div *ngIf=\"f.address.errors.required\">address is required</div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label>Adhar-no</label>\r\n                    <input type=\"text\" formControlName=\"adhar\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.adhar.errors }\" />\r\n                    <div *ngIf=\"submitted && f.adhar.errors\" class=\"invalid-feedback\">\r\n                        <div *ngIf=\"f.adhar.errors.required\">Adhar-no is required</div>\r\n                        <div *ngIf=\"f.adhar.errors.minlength\">Adhar-no must be a valid </div>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <div class=\"form-group col-5\">\r\n                    <label for=\"birthdate\">Birthdate</label>\r\n                    <input [max]=\"maxDate\" (change)=\"dateChange($event.target.value)\" type=\"date\" formControlName=\"birthdate\" class=\"form-control\">\r\n                </div>\r\n\r\n\r\n\r\n\r\n                <div class=\"form-group\">\r\n                    <label>Policy</label>\r\n                    <select formControlName=\"policy\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.policy.errors }\">\r\n                    <option value=\"\"></option>\r\n                    <option value=\"Mr\">fljrb</option>\r\n                    <option value=\"Mrs\">sfnj</option>\r\n                    <option value=\"Miss\">nef j</option>\r\n                    <option value=\"Ms\">fkgkm</option>\r\n                </select>\r\n                    <div *ngIf=\"submitted && f.policy.errors\" class=\"invalid-feedback\">\r\n                        <div *ngIf=\"f.policy?.errors.required\">Title is required</div>\r\n                    </div>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <label>Nominie:</label>\r\n                    <!-- <button class=\"btn btn-secondary btn-sm m-2\" type=\"button\" (click)=\"addAlternateEmail()\">Add Nominie</button> -->\r\n                    <div class=\"input-group\">\r\n                        <input formControlName=\"nominie\" type=\"text\" class=\"form-control\" placeholder=\"enter name\">\r\n                        <span class=\"input-group-addon\">-</span>\r\n                        <input formControlName=\"relation\" type=\"text\" class=\"form-control\" placeholder=\"enter relationship\">\r\n                    </div>\r\n                    <!-- <div  class=\"input-group\" formArrayName=\"alternateEmails\" *ngFor=\"let email of alternateEmails.controls; let i=index\">\r\n              <input type=\"text\" class=\"form-control my-1\" [formControlName]=\"i\"  placeholder=\"enter name\">\r\n              <span class=\"input-group-addon\">-</span>\r\n              <input type=\"text\" class=\"form-control my-1\" [formControlName]=\"i\" placeholder=\"enter relationship\">\r\n            </div> -->\r\n                </div>\r\n                <!-- <div class=\"form-group form-check\">\r\n                <input type=\"checkbox\" formControlName=\"acceptTerms\" id=\"acceptTerms\" class=\"form-check-input\" [ngClass]=\"{ 'is-invalid': submitted && f.acceptTerms.errors }\" />\r\n                <label for=\"acceptTerms\" class=\"form-check-label\">Accept Terms & Conditions</label>\r\n                <div *ngIf=\"submitted && f.acceptTerms.errors\" class=\"invalid-feedback\">Accept Ts & Cs is required</div>\r\n            </div> -->\r\n\r\n                <div class=\"text-center\">\r\n                    <button class=\"btn btn-primary mr-1\">Register</button>\r\n                    <button class=\"btn btn-secondary\" type=\"reset\" (click)=\"onReset()\">Cancel</button>\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>");
 
 /***/ }),
 
@@ -48,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<button class=\"btn btn-primary mr-1\" (click)=\"submitLogout()\">Logout</button>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>\r\n    hey !! {{first_name}}</h1>");
 
 /***/ }),
 
@@ -74,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n\r\n<div class=\"container\" style=\"position:absolute\"></div>\r\n\r\n<nav class=\"navbar navbar-expand-lg navbar-light bg-light\" id=\"nav_bar\">\r\n    <a class=\"navbar-brand\" href=\"#\">Navbar</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div id=\"navbarNavDropdown\" class=\"navbar-collapse collapse\">\r\n       \r\n         <ul>\r\n             <li></li>\r\n         </ul>\r\n    </div>\r\n</nav>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-expand-lg   rounded\">\r\n    <img src=\"assets/img/imiclogo.png\">&nbsp;Indian Medical Insurance\r\n    <ul class=\"navbar-nav mr-auto\">\r\n\r\n    </ul>\r\n    <ul class=\"navbar-nav ml-auto\">\r\n\r\n        <li class=\"nav-item dropdown\">\r\n            <button class=\"btn btn-secondary\" (click)=\"submitLogout()\">logout</button>\r\n        </li>\r\n    </ul>\r\n</nav>");
 
 /***/ }),
 
@@ -87,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("{{email}}");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-3 \">\r\n\r\n        </div>\r\n        <div class=\"col-md-9\">\r\n            <div class=\"card\">\r\n                <div class=\"card-body\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <h4>Your Profile</h4>\r\n                            <hr>\r\n                        </div>\r\n                    </div>\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-12\">\r\n                            <form [formGroup]=\"\">\r\n                                <div class=\"form-group row\">\r\n                                    <label for=\"username\" class=\"col-4 col-form-label\">firstname </label>\r\n                                    <div class=\"col-8\">\r\n                                        <input id=\"username\" class=\"form-control here\" value={{first_name}} type=\"text\" readonly>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"form-group row\">\r\n                                    <label for=\"name\" class=\"col-4 col-form-label\">First Name</label>\r\n                                    <div class=\"col-8\">\r\n                                        <input class=\"form-control here\" value={{first_name}} type=\"text\" readonly>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"form-group row\">\r\n                                    <label for=\"lastname\" class=\"col-4 col-form-label\">Last Name</label>\r\n                                    <div class=\"col-8\">\r\n                                        <input class=\"form-control here\" value={{last_name}} type=\"text\" readonly>\r\n                                    </div>\r\n                                </div>\r\n\r\n                                <div class=\"form-group row\">\r\n                                    <label for=\"email\" class=\"col-4 col-form-label\">Email</label>\r\n                                    <div class=\"col-8\">\r\n                                        <input class=\"form-control here\" value={{email}} type=\"text\" readonly>\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"form-group row\">\r\n                                    <label for=\"website\" class=\"col-4 col-form-label\">Phone no</label>\r\n                                    <div class=\"col-8\">\r\n                                        <input class=\"form-control here\" value={{phone}} type=\"text\" readonly>\r\n                                    </div>\r\n                                </div>\r\n\r\n                                <div class=\"form-group row\">\r\n                                    <div class=\"offset-4 col-8\">\r\n                                        <button name=\"submit\" type=\"submit\" class=\"btn btn-primary\">Update My Profile</button>\r\n                                    </div>\r\n                                </div>\r\n                            </form>\r\n                        </div>\r\n                    </div>\r\n\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -100,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"sidenav\" [ngStyle]=\"{'width.px': isOpen?'250':'0'}\">\r\n    <a href=\" javascript:void(0) \" class=\"closebtn \" (click)=\"closeNav() \">&times;</a>\r\n    <br>\r\n    <hr>\r\n    <div id=\"abc \">\r\n\r\n        <a routerLink=\"/agent/profile\" (click)='closeNav()'>Profile</a><br></div>\r\n    <hr>\r\n    <a routerLink=\"/agent/customer-list\" (click)='closeNav()'>Customer-list</a><br>\r\n    <hr>\r\n    <a routerLink=\"/agent/customer-registration\" (click)='closeNav()'>Add-customer</a><br>\r\n    <hr>\r\n    <a href=\"# \"></a>\r\n</div>\r\n\r\n\r\n<span style=\"font-size:30px;cursor:pointer \" (click)=\"openNav() \">&#9776; </span>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"sidenav\" [ngStyle]=\"{'width.px': isOpen?'250':'0'}\">\r\n    <a href=\" javascript:void(0) \" class=\"closebtn \" (click)=\"closeNav() \">&times;</a>\r\n    <br>\r\n    <hr>\r\n    <div id=\"abc \">\r\n\r\n        <a routerLink=\"/agent/profile\" (click)='closeNav()'>Profile</a><br></div>\r\n    <hr>\r\n    <a routerLink=\"/agent/customer-list\" (click)='closeNav()'>Customer-list</a><br>\r\n    <hr>\r\n    <a routerLink=\"/agent/customer-registration\" (click)='closeNav()'>Add-customer</a><br>\r\n    <hr>\r\n\r\n    <a routerLink=\"/agent/appliers\" (click)='closeNav()'>Appliers</a><br>\r\n</div>\r\n\r\n\r\n<span style=\"font-size:30px;cursor:pointer \" (click)=\"openNav() \">&#9776; </span>");
 
 /***/ }),
 
@@ -113,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>view-user works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"mx-auto\" style=\"width: 200px;\">\r\n    <div class=\"card d-flex h-100\" style=\"width: 45rem; height: 12rem;\">\r\n        <h5 class=\"card-header\">Add-Details</h5>\r\n        <div class=\"card-body\">\r\n            <form [formGroup]=\"\">\r\n                <div class=\"form-row\">\r\n                    <div class=\"form-group col\">\r\n                        <label>Title</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.title}} readonly/>\r\n                    </div>\r\n                    <div class=\"form-group col-5\">\r\n                        <label>First Name</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.firstname}} readonly/>\r\n                    </div>\r\n                    <div class=\"form-group col-5\">\r\n                        <label>Last Name</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.lastname}} readonly/>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Email</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.email}} readonly/>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Phone-no</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.phone}} readonly/>\r\n\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Address</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.address}} readonly/>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Adhar-no</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.adhar}} readonly/>\r\n\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Policy</label>\r\n                        <input type=\"text\" class=\"form-control\" value={{myData.policy}} readonly/>\r\n\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label>Nominie:</label>\r\n                        <!-- <button class=\"btn btn-secondary btn-sm m-2\" type=\"button\" (click)=\"addAlternateEmail()\">Add Nominie</button> -->\r\n                        <div class=\"input-group\">\r\n                            <input type=\"text\" class=\"form-control\" value={{myData.nominie}} readonly>\r\n                            <span class=\"input-group-addon\">-</span>\r\n                            <input type=\"text\" class=\"form-control\" value={{myData.relation}} readonly>\r\n                        </div>\r\n\r\n                    </div>\r\n\r\n\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <button class=\"btn btn-primary\" type=\"submit\" (click)=\"backToDash()\">Done</button>\r\n                    <!-- <button class=\"btn btn-secondary\" type=\"reset\" (click)=\"onReset()\">Cancel</button> -->\r\n                </div>\r\n            </form>\r\n        </div>\r\n    </div>\r\n</div>");
 
 /***/ }),
 
@@ -137,6 +150,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _agent_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./agent.component */ "./src/app/agent/agent.component.ts");
 /* harmony import */ var _view_user_view_user_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./view-user/view-user.component */ "./src/app/agent/view-user/view-user.component.ts");
 /* harmony import */ var _agent_guard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./agent.guard */ "./src/app/agent/agent.guard.ts");
+/* harmony import */ var _appliers_appliers_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./appliers/appliers.component */ "./src/app/agent/appliers/appliers.component.ts");
+
 
 
 
@@ -158,7 +173,8 @@ const routes = [
             { path: 'profile', component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_4__["ProfileComponent"], canActivate: [_agent_guard__WEBPACK_IMPORTED_MODULE_9__["AgentGuard"]] },
             { path: 'customer-list', component: _customer_list_customer_list_component__WEBPACK_IMPORTED_MODULE_5__["CustomerListComponent"], canActivate: [_agent_guard__WEBPACK_IMPORTED_MODULE_9__["AgentGuard"]] },
             { path: 'customer-registration', component: _customer_registration_customer_registration_component__WEBPACK_IMPORTED_MODULE_6__["CustomerRegistrationComponent"], canActivate: [_agent_guard__WEBPACK_IMPORTED_MODULE_9__["AgentGuard"]] },
-            { path: 'customer-list/viewUser/:id', component: _view_user_view_user_component__WEBPACK_IMPORTED_MODULE_8__["ViewUserComponent"], canActivate: [_agent_guard__WEBPACK_IMPORTED_MODULE_9__["AgentGuard"]] }
+            { path: 'customer-list/viewUser/:id', component: _view_user_view_user_component__WEBPACK_IMPORTED_MODULE_8__["ViewUserComponent"], canActivate: [_agent_guard__WEBPACK_IMPORTED_MODULE_9__["AgentGuard"]] },
+            { path: 'appliers', component: _appliers_appliers_component__WEBPACK_IMPORTED_MODULE_10__["AppliersComponent"], canActivate: [_agent_guard__WEBPACK_IMPORTED_MODULE_9__["AgentGuard"]] }
         ]
     }
 ];
@@ -290,6 +306,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./side-nav/side-nav.component */ "./src/app/agent/side-nav/side-nav.component.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _view_user_view_user_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./view-user/view-user.component */ "./src/app/agent/view-user/view-user.component.ts");
+/* harmony import */ var _appliers_appliers_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./appliers/appliers.component */ "./src/app/agent/appliers/appliers.component.ts");
+
 
 
 
@@ -316,7 +334,8 @@ AgentModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _header_header_component__WEBPACK_IMPORTED_MODULE_9__["HeaderComponent"],
             _profile_profile_component__WEBPACK_IMPORTED_MODULE_10__["ProfileComponent"],
             _side_nav_side_nav_component__WEBPACK_IMPORTED_MODULE_11__["SideNavComponent"],
-            _view_user_view_user_component__WEBPACK_IMPORTED_MODULE_13__["ViewUserComponent"]
+            _view_user_view_user_component__WEBPACK_IMPORTED_MODULE_13__["ViewUserComponent"],
+            _appliers_appliers_component__WEBPACK_IMPORTED_MODULE_14__["AppliersComponent"]
         ],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
@@ -355,6 +374,8 @@ let AgentserviceService = class AgentserviceService {
         this._urlgetall = 'http://localhost:8080/users';
         this._urlDeleteRow = ' http://localhost:8080/users/delete';
         this._urlView = 'http://localhost:8080/users/show';
+        this._urlcontactus = 'http://localhost:8080/contactus/';
+        this._urlDeleteApplier = 'http://localhost:8080/contactus/delete';
     }
     registeration(reg) {
         return this.http.post(this._url, reg);
@@ -368,6 +389,12 @@ let AgentserviceService = class AgentserviceService {
     view_User(_id) {
         return this.http.get(this._urlView + `/${_id}`);
     }
+    get_Contact() {
+        return this.http.get(this._urlcontactus);
+    }
+    delete_applier(_id) {
+        return this.http.delete(this._urlDeleteApplier + `/${_id}`);
+    }
 };
 AgentserviceService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -377,6 +404,77 @@ AgentserviceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         providedIn: 'root'
     })
 ], AgentserviceService);
+
+
+
+/***/ }),
+
+/***/ "./src/app/agent/appliers/appliers.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/agent/appliers/appliers.component.css ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9zcmMvYXBwL2FnZW50L2FwcGxpZXJzL2FwcGxpZXJzLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/agent/appliers/appliers.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/agent/appliers/appliers.component.ts ***!
+  \******************************************************/
+/*! exports provided: AppliersComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppliersComponent", function() { return AppliersComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _agentservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../agentservice.service */ "./src/app/agent/agentservice.service.ts");
+
+
+
+let AppliersComponent = class AppliersComponent {
+    constructor(_agentService) {
+        this._agentService = _agentService;
+        this.myData = {};
+    }
+    ngOnInit() {
+        this._agentService.get_Contact()
+            .subscribe(res => {
+            this.myData = res;
+            console.log(res);
+        }, error => console.error(error));
+    }
+    refreshUsersList() {
+        this._agentService.get_Contact().subscribe((res) => {
+            this.myData = res;
+        });
+    }
+    deleteApplier(_id) {
+        console.log(_id);
+        this._agentService.delete_applier(_id)
+            .subscribe(data => {
+            console.log(_id);
+            Array.prototype.slice.call(data, 1);
+            this.refreshUsersList();
+        }, error => console.error("errorbv,jv", error));
+    }
+};
+AppliersComponent.ctorParameters = () => [
+    { type: _agentservice_service__WEBPACK_IMPORTED_MODULE_2__["AgentserviceService"] }
+];
+AppliersComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-appliers',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./appliers.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/agent/appliers/appliers.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./appliers.component.css */ "./src/app/agent/appliers/appliers.component.css")).default]
+    })
+], AppliersComponent);
 
 
 
@@ -491,6 +589,8 @@ let CustomerRegistrationComponent = class CustomerRegistrationComponent {
         this.routes = routes;
         this._agentService = _agentService;
         this.submitted = false;
+        this.date = new Date();
+        this.maxDate = (new Date().getFullYear()).toString() + "-0" + (new Date().getMonth() + 1).toString() + "-" + (new Date().getDate()).toString();
     }
     ngOnInit() {
         this.registerForm = this.fb.group({
@@ -498,9 +598,10 @@ let CustomerRegistrationComponent = class CustomerRegistrationComponent {
             firstname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             lastname: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             email: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].email]],
-            phone: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(10)]],
+            phone: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].pattern("[0-9]{0-10}")]],
             address: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             adhar: ['', [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].minLength(12)]],
+            birthdate: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             policy: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             nominie: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
             relation: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_2__["Validators"].required],
@@ -517,7 +618,7 @@ let CustomerRegistrationComponent = class CustomerRegistrationComponent {
         alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value, null, 4));
         this._agentService.registeration(this.registerForm.value)
             .subscribe(data => {
-            console.log(data);
+            console.log(this.registerForm.value);
             this.submitted = false;
             if (this.submitted == false)
                 this.registerForm.reset();
@@ -526,6 +627,9 @@ let CustomerRegistrationComponent = class CustomerRegistrationComponent {
     onReset() {
         this.submitted = false;
         this.registerForm.reset();
+    }
+    dateChange(event) {
+        console.log(event);
     }
 };
 CustomerRegistrationComponent.ctorParameters = () => [
@@ -571,22 +675,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_home_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/home/data.service */ "./src/app/home/data.service.ts");
+/* harmony import */ var _agentservice_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../agentservice.service */ "./src/app/agent/agentservice.service.ts");
+
+
 
 
 
 let DashboardComponent = class DashboardComponent {
-    constructor(routes) {
+    constructor(routes, _agentService, dataService) {
         this.routes = routes;
+        this._agentService = _agentService;
+        this.dataService = dataService;
+        this.messages = [];
+        this.myData = {};
+        this.subscription = this.dataService.getMessage().subscribe(message => {
+            if (message) {
+                this.messages.push(message);
+                console.log(message);
+                console.log("Message", message.text.email);
+                this.first_name = message.text.first_name;
+                console.log(this.first_name);
+            }
+            else {
+                // clear messages when empty message received
+                this.messages = [];
+            }
+        });
     }
     ngOnInit() {
     }
-    submitLogout() {
-        localStorage.removeItem('token');
-        this.routes.navigate(['home/agent-login']);
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 };
 DashboardComponent.ctorParameters = () => [
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] },
+    { type: _agentservice_service__WEBPACK_IMPORTED_MODULE_4__["AgentserviceService"] },
+    { type: src_app_home_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] }
 ];
 DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -653,7 +779,7 @@ FooterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n.nav-item{\r\n    padding:2px;\r\n    margin-left: 7px;\r\n}\r\n#nav_bar{\r\n    padding: 15px 70px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hcHAvYWdlbnQvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFDQTtJQUNJLFdBQVc7SUFDWCxnQkFBZ0I7QUFDcEI7QUFDQTtJQUNJLGtCQUFrQjtBQUN0QiIsImZpbGUiOiIuLi9zcmMvYXBwL2FnZW50L2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIlxyXG4ubmF2LWl0ZW17XHJcbiAgICBwYWRkaW5nOjJweDtcclxuICAgIG1hcmdpbi1sZWZ0OiA3cHg7XHJcbn1cclxuI25hdl9iYXJ7XHJcbiAgICBwYWRkaW5nOiAxNXB4IDcwcHg7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("/* Stackoverflow preview fix, please ignore */\r\n\r\n.navbar {\r\n    background-color: whitesmoke;\r\n}\r\n\r\n.nav_txt {\r\n    color: black;\r\n}\r\n\r\n.navbar-nav {\r\n    flex-direction: row;\r\n}\r\n\r\n.nav-link {\r\n    padding-right: .5rem !important;\r\n    padding-left: .5rem !important;\r\n}\r\n\r\n/* Fixes dropdown menus placed on the right side */\r\n\r\n.ml-auto .dropdown-menu {\r\n    left: auto !important;\r\n    right: 0px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hcHAvYWdlbnQvaGVhZGVyL2hlYWRlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLDZDQUE2Qzs7QUFFN0M7SUFDSSw0QkFBNEI7QUFDaEM7O0FBRUE7SUFDSSxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0ksK0JBQStCO0lBQy9CLDhCQUE4QjtBQUNsQzs7QUFHQSxrREFBa0Q7O0FBRWxEO0lBQ0kscUJBQXFCO0lBQ3JCLFVBQVU7QUFDZCIsImZpbGUiOiIuLi9zcmMvYXBwL2FnZW50L2hlYWRlci9oZWFkZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi8qIFN0YWNrb3ZlcmZsb3cgcHJldmlldyBmaXgsIHBsZWFzZSBpZ25vcmUgKi9cclxuXHJcbi5uYXZiYXIge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGVzbW9rZTtcclxufVxyXG5cclxuLm5hdl90eHQge1xyXG4gICAgY29sb3I6IGJsYWNrO1xyXG59XHJcblxyXG4ubmF2YmFyLW5hdiB7XHJcbiAgICBmbGV4LWRpcmVjdGlvbjogcm93O1xyXG59XHJcblxyXG4ubmF2LWxpbmsge1xyXG4gICAgcGFkZGluZy1yaWdodDogLjVyZW0gIWltcG9ydGFudDtcclxuICAgIHBhZGRpbmctbGVmdDogLjVyZW0gIWltcG9ydGFudDtcclxufVxyXG5cclxuXHJcbi8qIEZpeGVzIGRyb3Bkb3duIG1lbnVzIHBsYWNlZCBvbiB0aGUgcmlnaHQgc2lkZSAqL1xyXG5cclxuLm1sLWF1dG8gLmRyb3Bkb3duLW1lbnUge1xyXG4gICAgbGVmdDogYXV0byAhaW1wb3J0YW50O1xyXG4gICAgcmlnaHQ6IDBweDtcclxufSJdfQ== */");
 
 /***/ }),
 
@@ -669,13 +795,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 let HeaderComponent = class HeaderComponent {
-    constructor() { }
+    constructor(routes) {
+        this.routes = routes;
+    }
     ngOnInit() {
     }
+    submitLogout() {
+        localStorage.removeItem('token');
+        this.routes.navigate(['home/agent-login']);
+    }
 };
+HeaderComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-header',
@@ -731,8 +868,8 @@ let ProfileComponent = class ProfileComponent {
                 console.log(message);
                 console.log("Message", message.text.email);
                 this.email = message.text.email;
-                this.firstName = message.text.firstName;
-                this.lastName = message.text.lastName;
+                this.first_name = message.text.first_name;
+                this.last_name = message.text.last_name;
                 this.phone = message.text.phone;
             }
             else {
@@ -823,7 +960,7 @@ AdminNavService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    position: fixed;\r\n    z-index: 1;\r\n    top: 0;\r\n    left: 0;\r\n    background-color: #adb5bd;\r\n    overflow-x: hidden;\r\n    transition: 0.5s;\r\n    padding-top: 60px;\r\n}\r\n\r\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    font-size: 25px;\r\n    color: black;\r\n    display: block;\r\n    transition: 0.3s;\r\n    font-family: 'Gayathri', sans-serif;\r\n}\r\n\r\n.sidenav a:hover {\r\n    color: #f1f1f1;\r\n    background: #383d41;\r\n    padding: 20px;\r\n}\r\n\r\n.sidenav .closebtn {\r\n    position: absolute;\r\n    top: 0;\r\n    right: 25px;\r\n    font-size: 36px;\r\n    margin-left: 50px;\r\n}\r\n\r\n@media screen and (max-height: 450px) {\r\n    .sidenav {\r\n        padding-top: 15px;\r\n    }\r\n    .sidenav a {\r\n        font-size: 18px;\r\n    }\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hcHAvYWdlbnQvc2lkZS1uYXYvc2lkZS1uYXYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixRQUFRO0lBQ1IsZUFBZTtJQUNmLFVBQVU7SUFDVixNQUFNO0lBQ04sT0FBTztJQUNQLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixxQkFBcUI7SUFDckIsZUFBZTtJQUNmLFlBQVk7SUFDWixjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLG1DQUFtQztBQUN2Qzs7QUFFQTtJQUNJLGNBQWM7SUFDZCxtQkFBbUI7SUFDbkIsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sV0FBVztJQUNYLGVBQWU7SUFDZixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSTtRQUNJLGlCQUFpQjtJQUNyQjtJQUNBO1FBQ0ksZUFBZTtJQUNuQjtBQUNKIiwiZmlsZSI6Ii4uL3NyYy9hcHAvYWdlbnQvc2lkZS1uYXYvc2lkZS1uYXYuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zaWRlbmF2IHtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHdpZHRoOiAwO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIHRvcDogMDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjYWRiNWJkO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG4gICAgdHJhbnNpdGlvbjogMC41cztcclxuICAgIHBhZGRpbmctdG9wOiA2MHB4O1xyXG59XHJcblxyXG4uc2lkZW5hdiBhIHtcclxuICAgIHBhZGRpbmc6IDhweCA4cHggOHB4IDMycHg7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHRyYW5zaXRpb246IDAuM3M7XHJcbiAgICBmb250LWZhbWlseTogJ0dheWF0aHJpJywgc2Fucy1zZXJpZjtcclxufVxyXG5cclxuLnNpZGVuYXYgYTpob3ZlciB7XHJcbiAgICBjb2xvcjogI2YxZjFmMTtcclxuICAgIGJhY2tncm91bmQ6ICMzODNkNDE7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG59XHJcblxyXG4uc2lkZW5hdiAuY2xvc2VidG4ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgcmlnaHQ6IDI1cHg7XHJcbiAgICBmb250LXNpemU6IDM2cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNTBweDtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC1oZWlnaHQ6IDQ1MHB4KSB7XHJcbiAgICAuc2lkZW5hdiB7XHJcbiAgICAgICAgcGFkZGluZy10b3A6IDE1cHg7XHJcbiAgICB9XHJcbiAgICAuc2lkZW5hdiBhIHtcclxuICAgICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICB9XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = (".sidenav {\r\n    height: 100%;\r\n    width: 0;\r\n    position: fixed;\r\n    z-index: 1;\r\n    top: 90px;\r\n    left: 0;\r\n    background-color: #adb5bd;\r\n    overflow-x: hidden;\r\n    transition: 0.5s;\r\n    padding-top: 60px;\r\n}\r\n\r\n.sidenav a {\r\n    padding: 8px 8px 8px 32px;\r\n    text-decoration: none;\r\n    font-size: 25px;\r\n    color: black;\r\n    display: block;\r\n    transition: 0.3s;\r\n    font-family: 'Gayathri', sans-serif;\r\n}\r\n\r\n.sidenav a:hover {\r\n    color: #f1f1f1;\r\n    background: #383d41;\r\n    padding: 20px;\r\n}\r\n\r\n.sidenav .closebtn {\r\n    position: absolute;\r\n    top: 0;\r\n    right: 25px;\r\n    font-size: 36px;\r\n    margin-left: 50px;\r\n}\r\n\r\n@media screen and (max-height: 450px) {\r\n    .sidenav {\r\n        padding-top: 15px;\r\n    }\r\n    .sidenav a {\r\n        font-size: 18px;\r\n    }\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3NyYy9hcHAvYWdlbnQvc2lkZS1uYXYvc2lkZS1uYXYuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFlBQVk7SUFDWixRQUFRO0lBQ1IsZUFBZTtJQUNmLFVBQVU7SUFDVixTQUFTO0lBQ1QsT0FBTztJQUNQLHlCQUF5QjtJQUN6QixrQkFBa0I7SUFDbEIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLHlCQUF5QjtJQUN6QixxQkFBcUI7SUFDckIsZUFBZTtJQUNmLFlBQVk7SUFDWixjQUFjO0lBQ2QsZ0JBQWdCO0lBQ2hCLG1DQUFtQztBQUN2Qzs7QUFFQTtJQUNJLGNBQWM7SUFDZCxtQkFBbUI7SUFDbkIsYUFBYTtBQUNqQjs7QUFFQTtJQUNJLGtCQUFrQjtJQUNsQixNQUFNO0lBQ04sV0FBVztJQUNYLGVBQWU7SUFDZixpQkFBaUI7QUFDckI7O0FBRUE7SUFDSTtRQUNJLGlCQUFpQjtJQUNyQjtJQUNBO1FBQ0ksZUFBZTtJQUNuQjtBQUNKIiwiZmlsZSI6Ii4uL3NyYy9hcHAvYWdlbnQvc2lkZS1uYXYvc2lkZS1uYXYuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5zaWRlbmF2IHtcclxuICAgIGhlaWdodDogMTAwJTtcclxuICAgIHdpZHRoOiAwO1xyXG4gICAgcG9zaXRpb246IGZpeGVkO1xyXG4gICAgei1pbmRleDogMTtcclxuICAgIHRvcDogOTBweDtcclxuICAgIGxlZnQ6IDA7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjYWRiNWJkO1xyXG4gICAgb3ZlcmZsb3cteDogaGlkZGVuO1xyXG4gICAgdHJhbnNpdGlvbjogMC41cztcclxuICAgIHBhZGRpbmctdG9wOiA2MHB4O1xyXG59XHJcblxyXG4uc2lkZW5hdiBhIHtcclxuICAgIHBhZGRpbmc6IDhweCA4cHggOHB4IDMycHg7XHJcbiAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XHJcbiAgICBmb250LXNpemU6IDI1cHg7XHJcbiAgICBjb2xvcjogYmxhY2s7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHRyYW5zaXRpb246IDAuM3M7XHJcbiAgICBmb250LWZhbWlseTogJ0dheWF0aHJpJywgc2Fucy1zZXJpZjtcclxufVxyXG5cclxuLnNpZGVuYXYgYTpob3ZlciB7XHJcbiAgICBjb2xvcjogI2YxZjFmMTtcclxuICAgIGJhY2tncm91bmQ6ICMzODNkNDE7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG59XHJcblxyXG4uc2lkZW5hdiAuY2xvc2VidG4ge1xyXG4gICAgcG9zaXRpb246IGFic29sdXRlO1xyXG4gICAgdG9wOiAwO1xyXG4gICAgcmlnaHQ6IDI1cHg7XHJcbiAgICBmb250LXNpemU6IDM2cHg7XHJcbiAgICBtYXJnaW4tbGVmdDogNTBweDtcclxufVxyXG5cclxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC1oZWlnaHQ6IDQ1MHB4KSB7XHJcbiAgICAuc2lkZW5hdiB7XHJcbiAgICAgICAgcGFkZGluZy10b3A6IDE1cHg7XHJcbiAgICB9XHJcbiAgICAuc2lkZW5hdiBhIHtcclxuICAgICAgICBmb250LXNpemU6IDE4cHg7XHJcbiAgICB9XHJcbn0iXX0= */");
 
 /***/ }),
 
@@ -901,12 +1038,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _agentservice_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../agentservice.service */ "./src/app/agent/agentservice.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+
 
 
 
 
 let ViewUserComponent = class ViewUserComponent {
-    constructor(_agentService, routes, activateRouter) {
+    constructor(fb, _agentService, routes, activateRouter) {
+        this.fb = fb;
         this._agentService = _agentService;
         this.routes = routes;
         this.activateRouter = activateRouter;
@@ -919,8 +1059,12 @@ let ViewUserComponent = class ViewUserComponent {
                 .subscribe((res) => this.myData = res, error => console.error(error));
         });
     }
+    backToDash() {
+        this.routes.navigate(['agent/customer-list']);
+    }
 };
 ViewUserComponent.ctorParameters = () => [
+    { type: _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"] },
     { type: _agentservice_service__WEBPACK_IMPORTED_MODULE_2__["AgentserviceService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }

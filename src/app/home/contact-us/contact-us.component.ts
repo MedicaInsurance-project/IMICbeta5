@@ -15,7 +15,7 @@ export class ContactUsComponent implements OnInit {
 
   ngOnInit() {
     this.contact = this.formBuilder.group({
-      fullname : ['', Validators.required],
+      fullname: ['', Validators.required],
       email: ['', Validators.required],
       contact: [''],
       message: ['', Validators.required]
@@ -26,7 +26,8 @@ export class ContactUsComponent implements OnInit {
   submit() {
     this._authService.contactlogin(this.contact.value)
     .subscribe(res => {
-      alert('submitted');
+      console.log(res);
+      alert('Data Submitted !! Our agent will get in touch with you ');
     });
       }
 

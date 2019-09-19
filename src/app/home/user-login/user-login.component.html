@@ -1,14 +1,15 @@
-<section class="cmspage mtb-40">
-    <div class="container">
-        <div class="page-desc">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <h1>User Login</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <h5 class="card-title align-self-center"><strong>User Log In</strong></h5>
+                <div class="card-body row justify-content-center align-self-center">
+
                     <form [formGroup]="login" (ngSubmit)="onUserSubmit()">
                         <div class="form-group col-sm-12">
                             <label>
                     Phone:
-                    <input type="number" class="form-control phone" formControlName="phone">
+                    <input type="text" class="form-control phone" formControlName="phone">
                 </label>
                         </div>
 
@@ -19,13 +20,15 @@
                 </label>
                         </div>
 
-                        <div>
+
+                        <div class="text-center">
 
                             <button class="btn btn-primary">Submit</button>
                         </div>
                     </form>
                 </div>
             </div>
+
         </div>
     </div>
-</section>
+</div>

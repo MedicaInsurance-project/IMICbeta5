@@ -338,7 +338,7 @@ if (content.locals) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! F:\Major Project\Upgrade IMIC\IMICBeta4\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\dell\Desktop\New folder\IMICBeta5\src\styles.css */"./src/styles.css");
 
 
 /***/ })

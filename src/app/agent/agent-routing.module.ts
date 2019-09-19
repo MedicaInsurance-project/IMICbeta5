@@ -7,6 +7,7 @@ import { CustomerRegistrationComponent } from './customer-registration/customer-
 import { AgentComponent } from './agent.component';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { AgentGuard } from './agent.guard';
+import { AppliersComponent } from './appliers/appliers.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,9 @@ const routes: Routes = [
       { path: 'profile' , component: ProfileComponent, canActivate: [AgentGuard] },
       { path: 'customer-list' , component: CustomerListComponent, canActivate: [AgentGuard]  },
       { path: 'customer-registration' , component: CustomerRegistrationComponent, canActivate: [AgentGuard]  },
-      { path: 'customer-list/viewUser/:id' , component: ViewUserComponent, canActivate: [AgentGuard]  }
+      { path: 'customer-list/viewUser/:id' , component: ViewUserComponent, canActivate: [AgentGuard]  },
+      { path: 'appliers' , component: AppliersComponent, canActivate: [AgentGuard]  }
+
     ]
   }
 
