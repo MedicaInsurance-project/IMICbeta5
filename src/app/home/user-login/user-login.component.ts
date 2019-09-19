@@ -14,6 +14,7 @@ import { DataService } from '../data.service';
 export class UserLoginComponent implements OnInit {
 
   login: FormGroup;
+  userdetail
 
   
   constructor(private formBuilder: FormBuilder, private routes: Router, private _authService: AuthService, private dataService: DataService) { 
@@ -42,8 +43,11 @@ export class UserLoginComponent implements OnInit {
     this._authService.userlogin(this.login.value)
     .subscribe(res => {
       localStorage.setItem('userToken',res.token);
-      console.log(res.userDetails);
-      this.dataService.sendMessage(res.userDetails)
+      this.userdetail = res.userDetails
+      console.log("details of user",res.userDetails);
+      this.dataService.sendMessage(res.userDetails);
+      localStorage.setItem("userdata",JSON.stringify(this.userdetail));
+      localStorage.setItem("username",this.userdetail.firstname);
 
       this.routes.navigate(['user/dashboard'], { replaceUrl: true });              
     });

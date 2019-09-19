@@ -528,6 +528,9 @@ let AuthService = class AuthService {
     agentLoggedIn() {
         return !!localStorage.getItem('token');
     }
+    userLoggedIn() {
+        return !!localStorage.getItem('userToken');
+    }
     getToken() {
         return localStorage.getItem('token');
     }
@@ -651,7 +654,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\dell\Desktop\New folder\IMICBeta5\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\dell\Desktop\IMICbeta5\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   messages: any[] = [];
   subscription: Subscription;
   myData ={ }
-  first_name;
+   first_name: String;
 
 
   constructor(private _authService : AuthService, private dataService: DataService) {

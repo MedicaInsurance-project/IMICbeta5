@@ -26,6 +26,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/user/user/update-password/update-password.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/user/user/update-password/update-password.component.html ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid\">\n    <form>\n        <input type=\"text\" placeholder=\"enter password\">\n        <input type=\"text\" placeholder=\"update password\">\n        <button class=\"btn btn-primary\" (click)=\"update(email)\">Submit</button>\n    </form>\n</div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/user/user/user-dashboard/user-dashboard.component.html":
 /*!**************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/user/user/user-dashboard/user-dashboard.component.html ***!
@@ -74,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"sidenav\" [ngStyle]=\"{'width.px': isOpen?'250':'0'}\">\r\n    <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n    <a routerLink=\"/user/user-profile\">Profile</a>\r\n    <a routerLink=\"/user/apply-for-claims\">Apply Claims</a>\r\n    <a routerLink=\"/user/policy\">My Policy</a>\r\n    <a href=\"#\">Logout</a>\r\n  </div>\r\n  \r\n\r\n  <span style=\"font-size:30px;cursor:pointer\" (click)=\"openNav()\">&#9776; </span>\r\n  ");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"sidenav\" [ngStyle]=\"{'width.px': isOpen?'250':'0'}\">\r\n    <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n    <a routerLink=\"/user/user-profile\">Profile</a>\r\n    <a routerLink=\"/user/apply-for-claims\">Apply Claims</a>\r\n    <a routerLink=\"/user/policy\">My Policy</a>\r\n    <a routerLink=\"/user/updatePassword\">updatePassword</a>\r\n    <a href=\"#\">Logout</a>\r\n</div>\r\n\r\n\r\n<span style=\"font-size:30px;cursor:pointer\" (click)=\"openNav()\">&#9776; </span>");
 
 /***/ }),
 
@@ -187,6 +200,83 @@ PolicyComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./policy.component.css */ "./src/app/user/user/policy/policy.component.css")).default]
     })
 ], PolicyComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/user/update-password/update-password.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/user/user/update-password/update-password.component.css ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuLi9zcmMvYXBwL3VzZXIvdXNlci91cGRhdGUtcGFzc3dvcmQvdXBkYXRlLXBhc3N3b3JkLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/user/user/update-password/update-password.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/user/user/update-password/update-password.component.ts ***!
+  \************************************************************************/
+/*! exports provided: UpdatePasswordComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UpdatePasswordComponent", function() { return UpdatePasswordComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _user_service_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../user-service.service */ "./src/app/user/user/user-service.service.ts");
+/* harmony import */ var src_app_home_data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/home/data.service */ "./src/app/home/data.service.ts");
+
+
+
+
+let UpdatePasswordComponent = class UpdatePasswordComponent {
+    constructor(_userService, dataService) {
+        this._userService = _userService;
+        this.dataService = dataService;
+        this.messages = [];
+        this.subscription = this.dataService.getMessage().subscribe(message => {
+            if (message) {
+                this.messages.push(message);
+                console.log(message);
+                console.log("Message", message.text.email);
+                this.email = message.text.email;
+            }
+            else {
+                // clear messages when empty message received
+                this.messages = [];
+            }
+        });
+    }
+    ngOnInit() {
+    }
+    update(email) {
+        this._userService.updatePassword(email)
+            .subscribe(data => {
+            console.log(email);
+        }, error => console.error(error));
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
+};
+UpdatePasswordComponent.ctorParameters = () => [
+    { type: _user_service_service__WEBPACK_IMPORTED_MODULE_2__["UserServiceService"] },
+    { type: src_app_home_data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] }
+];
+UpdatePasswordComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-update-password',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./update-password.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/user/user/update-password/update-password.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./update-password.component.css */ "./src/app/user/user/update-password/update-password.component.css")).default]
+    })
+], UpdatePasswordComponent);
 
 
 
@@ -527,6 +617,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user-profile/user-profile.component */ "./src/app/user/user/user-profile/user-profile.component.ts");
 /* harmony import */ var _policy_policy_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./policy/policy.component */ "./src/app/user/user/policy/policy.component.ts");
 /* harmony import */ var _apply_for_claims_apply_for_claims_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./apply-for-claims/apply-for-claims.component */ "./src/app/user/user/apply-for-claims/apply-for-claims.component.ts");
+/* harmony import */ var _update_password_update_password_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./update-password/update-password.component */ "./src/app/user/user/update-password/update-password.component.ts");
+
 
 
 
@@ -559,6 +651,9 @@ const routes = [
             },
             {
                 path: 'apply-for-claims', component: _apply_for_claims_apply_for_claims_component__WEBPACK_IMPORTED_MODULE_8__["ApplyForClaimsComponent"]
+            },
+            {
+                path: 'updatePassword', component: _update_password_update_password_component__WEBPACK_IMPORTED_MODULE_9__["UpdatePasswordComponent"]
             }
         ]
     }
@@ -571,6 +666,44 @@ UserRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
     })
 ], UserRoutingModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/user/user/user-service.service.ts":
+/*!***************************************************!*\
+  !*** ./src/app/user/user/user-service.service.ts ***!
+  \***************************************************/
+/*! exports provided: UserServiceService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserServiceService", function() { return UserServiceService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+
+
+
+let UserServiceService = class UserServiceService {
+    constructor(http) {
+        this.http = http;
+        this._urlupdate = 'http://localhost:8080/registerNewPassword';
+    }
+    updatePassword(_email) {
+        return this.http.put(this._urlupdate, +`/${_email}`);
+    }
+};
+UserServiceService.ctorParameters = () => [
+    { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
+];
+UserServiceService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    })
+], UserServiceService);
 
 
 
@@ -642,6 +775,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _user_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./user.component */ "./src/app/user/user/user.component.ts");
 /* harmony import */ var _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./user-profile/user-profile.component */ "./src/app/user/user/user-profile/user-profile.component.ts");
 /* harmony import */ var _apply_for_claims_apply_for_claims_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./apply-for-claims/apply-for-claims.component */ "./src/app/user/user/apply-for-claims/apply-for-claims.component.ts");
+/* harmony import */ var _update_password_update_password_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./update-password/update-password.component */ "./src/app/user/user/update-password/update-password.component.ts");
+
 
 
 
@@ -659,7 +794,7 @@ let UserModule = class UserModule {
 UserModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
         // tslint:disable-next-line:max-line-length
-        declarations: [_user_home_user_home_component__WEBPACK_IMPORTED_MODULE_4__["UserHomeComponent"], _user_nav_bar_user_nav_bar_component__WEBPACK_IMPORTED_MODULE_5__["UserNavBarComponent"], _user_footer_user_footer_component__WEBPACK_IMPORTED_MODULE_6__["UserFooterComponent"], _user_dashboard_user_dashboard_component__WEBPACK_IMPORTED_MODULE_7__["UserDashboardComponent"], _policy_policy_component__WEBPACK_IMPORTED_MODULE_8__["PolicyComponent"], _user_component__WEBPACK_IMPORTED_MODULE_9__["UserComponent"], _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_10__["UserProfileComponent"], _apply_for_claims_apply_for_claims_component__WEBPACK_IMPORTED_MODULE_11__["ApplyForClaimsComponent"]],
+        declarations: [_user_home_user_home_component__WEBPACK_IMPORTED_MODULE_4__["UserHomeComponent"], _user_nav_bar_user_nav_bar_component__WEBPACK_IMPORTED_MODULE_5__["UserNavBarComponent"], _user_footer_user_footer_component__WEBPACK_IMPORTED_MODULE_6__["UserFooterComponent"], _user_dashboard_user_dashboard_component__WEBPACK_IMPORTED_MODULE_7__["UserDashboardComponent"], _policy_policy_component__WEBPACK_IMPORTED_MODULE_8__["PolicyComponent"], _user_component__WEBPACK_IMPORTED_MODULE_9__["UserComponent"], _user_profile_user_profile_component__WEBPACK_IMPORTED_MODULE_10__["UserProfileComponent"], _apply_for_claims_apply_for_claims_component__WEBPACK_IMPORTED_MODULE_11__["ApplyForClaimsComponent"], _update_password_update_password_component__WEBPACK_IMPORTED_MODULE_12__["UpdatePasswordComponent"]],
         imports: [
             _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
             _user_routing_module__WEBPACK_IMPORTED_MODULE_3__["UserRoutingModule"]

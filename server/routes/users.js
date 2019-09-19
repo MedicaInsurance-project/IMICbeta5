@@ -19,6 +19,12 @@ router.get('/show/:id', function(req, res) {
     Users.show(req, res);
 });
 
+
+//
+router.put('/registerNewPassword/:email', function(req, res) {
+    Users.registerNewPassword(req, res);
+})
+
 /*
   ! Router api not in function 
 // Create Users
@@ -31,8 +37,14 @@ router.get('/create', function (req, res) {
 // Save Users
 
 // http://localhost:8080/users
-router.post('/save', function(req, res) {
-    Users.save(req, res);
+
+// router.post('/save', function(req, res) {
+//     Users.save(req, res);
+// });
+
+// http://localhost:8080/users/createNew
+router.post('/createNew', function(req, res) {
+    Users.createNew(req, res);
 });
 
 
@@ -61,5 +73,11 @@ router.put('/update/:id', function(req, res) {
 router.delete('/delete/:id', function(req, res, next) {
     Users.delete(req, res);
 });
+
+// Update Policy Status by Admin
+
+router.put('/updateStatus/:id', function(req, res, next) {
+    Users.updateStatus(req, res);
+})
 
 module.exports = router;

@@ -6,6 +6,7 @@ import { UserComponent } from './user.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PolicyComponent } from './policy/policy.component';
 import { ApplyForClaimsComponent } from './apply-for-claims/apply-for-claims.component';
+import { UpdatePasswordComponent } from './update-password/update-password.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,9 @@ const routes: Routes = [
       },
       {
         path: 'apply-for-claims', component: ApplyForClaimsComponent
+      },
+      {
+        path: 'updatePassword', component: UpdatePasswordComponent
       }
     ]
   }

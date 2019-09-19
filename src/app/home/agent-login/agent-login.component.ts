@@ -14,6 +14,7 @@ import { DataService } from '../data.service';
 export class AgentLoginComponent implements OnInit {
 
   login: FormGroup;
+  agentName;
 
   constructor( private formBuilder: FormBuilder, private routes: Router, private _authService: AuthService, private dataService: DataService) { }
 
@@ -45,9 +46,13 @@ export class AgentLoginComponent implements OnInit {
       .subscribe(
         res=> {
           localStorage.setItem('token',res.token); 
-          this.dataService.sendMessage(res.agent)
+          this.dataService.sendMessage(res.agent);
+          
           
           localStorage.setItem('ID',res.agent._id )
+          localStorage.setItem('agentName',res.agent.first_name )
+          this.agentName = localStorage.getItem('agentName');
+          console.log("agentLOcal Value",this.agentName);
 
           this.routes.navigate(['agent/dashboard'])
         

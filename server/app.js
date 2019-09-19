@@ -33,6 +33,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var contactus = require('./routes/contactUs');
 var agent = require('./routes/agentRoute');
+const admin = require('./routes/admin');
 var app = express();
 
 var env = process.env.NODEJSENV || 'localhost';
@@ -55,12 +56,12 @@ swaggerDoc.schemes = [config.swaggerDocScheme];
 
 
 // Initialize the Swagger middleware
-swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
+swaggerTools.initializeMiddleware(swaggerDoc, function(middleware) {
     // Interpret Swagger resources and attach metadata to request - must be first in swagger-tools middleware chain
     app.use(middleware.swaggerMetadata());
 
     // Attach our own objects to the request, so the service call handlers have those available
-    app.use(function (req, res, next) {
+    app.use(function(req, res, next) {
         req.ph = {};
         next();
     });
@@ -68,7 +69,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
     app.use(middleware.swaggerSecurity({ Bearer: auth.verifyToken }));
 
     // If the auth function above failed, we don't want to display the swagger auth error message, we want to send our own.
-    app.use(function (req, res, next) {
+    app.use(function(req, res, next) {
         if (req.ph.hasOwnProperty('response') && req.ph.response.code == -1) {
             res.writeHead(401, { 'Content-Type': 'application/json' });
             return res.end(JSON.stringify({ message: "Error: Access Denied" }));
@@ -79,7 +80,7 @@ swaggerTools.initializeMiddleware(swaggerDoc, function (middleware) {
     app.use(compression());
 
     // Attach our own objects to the request, so the service call handlers have those available
-    app.use(function (req, res, next) {
+    app.use(function(req, res, next) {
         req.ph = {};
         req.ph.config = config;
         next();
@@ -120,16 +121,17 @@ app.use(cookieParser());
 
 //connectin angular withnode on port 8080
 app.use(express.static(path.join(__dirname, '../dist/ang')));
-app.get('/*',(req,res)=>res.sendFile(path.join(__dirname)));
+app.get('/*', (req, res) => res.sendFile(path.join(__dirname)));
 
 // app.use('/', index);
 app.use('/users', users);
 app.use('/contactus', contactus);
-app.use('/agent',agent);
+app.use('/agent', agent);
+app.use('/admin', admin)
 
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
     // set locals, only providing error in development
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
@@ -140,7 +142,7 @@ app.use(function (err, req, res, next) {
 
 });
 
-app.listen(config.serverPort, function () {
+app.listen(config.serverPort, function() {
     console.log('Server is listening on port %d (http://localhost:%d)', config.serverPort, config.serverPort);
     console.log('Swagger-ui is available on http://localhost:%d/docs', config.serverPort);
 });

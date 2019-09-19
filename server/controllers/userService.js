@@ -21,6 +21,7 @@ module.exports.userLoginPOST = function(req, res, next) {
 
     if (_params.password.value) {
         user.password = cryptography.sha256(_params.password.value);
+
     }
     if (_params.phone.value && _params.password.value) {
         userDal.userLoginPOST(user, function(err, userDetails) {

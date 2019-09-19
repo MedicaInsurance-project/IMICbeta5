@@ -100,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"pos-f-t\">\r\n    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\" id=\"nav_bar\">\r\n        <a class=\"navbar-brand\" href=\"#\">\r\n            <img src=\"assets/img/imiclogo.png\" alt=\"...\" class=\" img-fluid  \"> &nbsp;Indian Medical Insurance</a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n        <div id=\"navbarNavDropdown\" class=\"navbar-collapse collapse\">\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <!-- <li class=\"nav-item active\">\r\n                <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"#\">Features</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n            </li> -->\r\n\r\n            </ul>\r\n            <ul class=\"navbar-nav\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/home\">Home</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/home/about-us\">About-us</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/home/contact-us\">Contact-us</a>\r\n                </li>\r\n\r\n                <li class=\"nav-item dropdown\">\r\n\r\n                    <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                    Login\r\n                </a>\r\n                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n                        <a class=\"dropdown-item\" routerLink=\"/home/user-login\">User-Login</a>\r\n                        <a class=\"dropdown-item\" routerLink=\"/home/agent-login\">Agent-Login</a>\r\n\r\n                    </div>\r\n                </li>\r\n                <!-- <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"\">Login</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"\">Register</a>\r\n            </li> -->\r\n            </ul>\r\n        </div>\r\n    </nav>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"pos-f-t\">\r\n    <nav class=\"navbar navbar-expand-lg navbar-light bg-light\" id=\"nav_bar\">\r\n        <a class=\"navbar-brand\" href=\"/home\">\r\n            <img src=\"assets/img/imiclogo.png\" alt=\"...\" class=\" img-fluid  \"> &nbsp;Indian Medical Insurance</a>\r\n        <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavDropdown\" aria-controls=\"navbarNavDropdown\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n        <div id=\"navbarNavDropdown\" class=\"navbar-collapse collapse\">\r\n            <ul class=\"navbar-nav mr-auto\">\r\n                <!-- <li class=\"nav-item active\">\r\n                <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"#\">Features</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" href=\"#\">Pricing</a>\r\n            </li> -->\r\n\r\n            </ul>\r\n            <ul class=\"navbar-nav\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/home\">Home</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/home/about-us\">About-us</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/home/contact-us\">Contact-us</a>\r\n                </li>\r\n\r\n                <li class=\"nav-item dropdown\" *ngIf=\"!_authService.agentLoggedIn()\">\r\n\r\n                    <a class=\"nav-link dropdown-toggle\" *ngIf=\"!_authService.agentLoggedIn()\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                    login\r\n                    </a>\r\n                    <div class=\"dropdown-menu\" *ngIf=\"!_authService.agentLoggedIn()\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n                        <a class=\"dropdown-item\" *ngIf=\"!_authService.userLoggedIn()\" routerLink=\"/home/user-login\">User-Login</a>\r\n                        <a class=\"dropdown-item \" *ngIf=\"!_authService.agentLoggedIn()\" routerLink=\"/home/agent-login\">Agent-Login</a>\r\n\r\n                    </div>\r\n\r\n                </li>\r\n                <li class=\"nav-item dropdown\" *ngIf=\"_authService.agentLoggedIn()\">\r\n                    <a class=\"nav-link dropdown-toggle\" *ngIf=\"_authService.agentLoggedIn()\" id=\"navbarDropdownMenuLink\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n                    {{first_name}}\r\n                    </a>\r\n\r\n                    <div class=\"dropdown-menu\" *ngIf=\"_authService.agentLoggedIn()\" aria-labelledby=\"navbarDropdownMenuLink\">\r\n                        <a class=\"dropdown-item\" *ngIf=\"_authService.agentLoggedIn()\" routerLink=\"/agent/dashboard\">My Profile</a>\r\n                    </div>\r\n\r\n\r\n\r\n                </li>\r\n                <!-- <li class=\"nav-item \">\r\n                <a class=\"nav-link \" href=\" \">Login</a>\r\n            </li>\r\n            <li class=\"nav-item \">\r\n                <a class=\"nav-link \" href=\" \">Register</a>\r\n            </li> -->\r\n            </ul>\r\n        </div>\r\n    </nav>");
 
 /***/ }),
 
@@ -602,13 +602,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HeaderComponent", function() { return HeaderComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../auth.service */ "./src/app/home/auth.service.ts");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../data.service */ "./src/app/home/data.service.ts");
+
+
 
 
 let HeaderComponent = class HeaderComponent {
-    constructor() { }
+    constructor(_authService, dataService) {
+        this._authService = _authService;
+        this.dataService = dataService;
+        this.messages = [];
+        this.myData = {};
+        this.subscription = this.dataService.getMessage().subscribe(message => {
+            if (message) {
+                this.messages.push(message);
+                console.log(message);
+                this.first_name = message.text.first_name;
+                console.log(this.first_name);
+            }
+            else {
+                // clear messages when empty message received
+                this.messages = [];
+            }
+        });
+    }
     ngOnInit() {
     }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
+    }
 };
+HeaderComponent.ctorParameters = () => [
+    { type: _auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"] },
+    { type: _data_service__WEBPACK_IMPORTED_MODULE_3__["DataService"] }
+];
 HeaderComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-header',
@@ -907,7 +935,7 @@ let UserLoginComponent = class UserLoginComponent {
         this._authService.userlogin(this.login.value)
             .subscribe(res => {
             localStorage.setItem('userToken', res.token);
-            console.log(res.userDetails);
+            console.log("details of user", res.userDetails);
             this.dataService.sendMessage(res.userDetails);
             this.routes.navigate(['user/dashboard'], { replaceUrl: true });
         });
