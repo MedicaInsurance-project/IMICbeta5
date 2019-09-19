@@ -14,6 +14,8 @@ export class AuthService {
   // tslint:disable-next-line:variable-name
   _url2 = 'http://localhost:8089/api/v1/user/userLogin';
 
+  private adminLoginURL = 'http://localhost:8080/admin/adminLogin'
+
  // tslint:disable-next-line:variable-name
  _url3 = 'http://localhost:8080/contactus/create';
 
@@ -21,7 +23,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   adminlogin(admin: adminLogin) {
-    return this.http.post<any>(this._url2, admin);
+    return this.http.post<any>(this.adminLoginURL, admin);
   }
   userlogin(user: UserLogin) {
     return this.http.post<any>(this._url2, user);

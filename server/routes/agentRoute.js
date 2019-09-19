@@ -46,12 +46,6 @@ router.post('/forgotPassword/',function(req,res){
     agent.forgotPassword(req,res);
 });
 
- //Getting Particular user
-router.get('/viewAgent', verify,(err,res)=>{
-    console.log("hitted");
-    let agentPayload = jwt.verify(token, 'secretKey');
-    console.log(agentPayload.subject);
-    res.status(200).send({message: "got it"});
-})
+
 
 module.exports = router;

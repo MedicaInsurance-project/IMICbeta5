@@ -25,5 +25,9 @@ error => console.error(error)
 
 
 }
+back(){
+  this.routes.navigate(['agent/customer-list']);
+}
+
 
 }

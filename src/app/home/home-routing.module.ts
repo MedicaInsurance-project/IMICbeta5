@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { TeamMemberComponent } from './team-member/team-member.component';
 import { EmailVerifyComponent } from './email-verify/email-verify.component';
 import { ConfirmPasswordComponent } from './confirm-password/confirm-password.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 const routes: Routes = [
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'contact-us', component: ContactUsComponent },
       { path: 'user-login', component: UserLoginComponent },
       { path: 'agent-login', component: AgentLoginComponent},
+      { path: 'admin-login', component: AdminLoginComponent},
       { path: 'email-verify', component: EmailVerifyComponent},
       { path: 'confirm-password', component: ConfirmPasswordComponent}
     ]

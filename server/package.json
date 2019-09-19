@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng build && node ./bin/www",
+    "start": "ng serve && nodemon ./bin/www",
+    "dev": "concurrently --kill-others \"nodemon ./bin/www\" \"ng serve\"",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

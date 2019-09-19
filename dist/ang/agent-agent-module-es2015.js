@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>view-user works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>view-user works!</p>\n<button (click)=\"back()\"></button>");
 
 /***/ }),
 
@@ -918,6 +918,9 @@ let ViewUserComponent = class ViewUserComponent {
             this._agentService.view_User(data.id)
                 .subscribe((res) => this.myData = res, error => console.error(error));
         });
+    }
+    back() {
+        this.routes.navigate(['agent/customer-list']);
     }
 };
 ViewUserComponent.ctorParameters = () => [

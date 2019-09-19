@@ -8,7 +8,7 @@ import { register } from './customer-registration/register';
 })
 export class AgentserviceService {
   // tslint:disable-next-line:variable-name
-  _url = 'http://localhost:8080/users/save';
+  _url = 'http://localhost:8080/users/createNew';
 
   _urlgetall = 'http://localhost:8080/users'
 

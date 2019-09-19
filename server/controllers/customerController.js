@@ -7,8 +7,8 @@ const cryptography = require('../helper/cryptography');
 var customerController = {};
 
 // Show list of users
-customerController.list = function(req, res) {
-    Users.find({}).exec(function(err, users) {
+customerController.list = function (req, res) {
+    Users.find({}).exec(function (err, users) {
         if (err) {
             console.log("Error:", err);
         } else {
@@ -20,8 +20,8 @@ customerController.list = function(req, res) {
 };
 
 // Show Users by id
-customerController.show = function(req, res) {
-    Users.findOne({ _id: req.params.id }).exec(function(err, users) {
+customerController.show = function (req, res) {
+    Users.findOne({ _id: req.params.id }).exec(function (err, users) {
         if (err) {
             console.log("Error:", err);
         } else {
@@ -53,49 +53,98 @@ function makeid(length) {
 
 
 
-// Save new Users
-customerController.save = function(req, res) {
+//new customer registration
+customerController.createNew = function (req, res, next) {
+    var user = new Users({
+        title: req.body.title,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        email: req.body.email,
+        phone: req.body.phone,
+        location: {
+            address: req.body.location.address,
+            state: req.body.location.state,
+            city: req.body.location.city
+        },
+        policy:
+        {
+            policyName: req.body.policy.policyName,
+            policyAmount: req.body.policy.policyAmount,
+            premium: req.body.policy.premium,
+        },
+        nominie:
+        {
+            nominieName: req.body.nominie.nominieName,
+            nominieRealtion: req.body.nominie.nominieRealtion,
+            nominieNumber: req.body.nominie.nominieNumber,
+        },
 
-    var users = new Users(req.body);
-    const schema = Joi.object().keys({
-        title: Joi.string(),
-        firstname: Joi.string(),
-        lastname: Joi.string(),
-        email: Joi.string(),
-        phone: Joi.number(),
-        address: Joi.string(),
-        adhar: Joi.number(),
-        policy: Joi.string(),
-        nominie: Joi.string(),
-        relation: Joi.string()
-            // alternateEmails: Joi.object()
-
-    });
-    Joi.validate(req.body, schema, (err, response) => {
-        if (err) {
-            console.log('error occured');
-            console.log(err)
-        } else {
-            //password generate for user
-            password = makeid(10);
-            console.log("User password is " + password);
-            users.setPassword(password);
-            users.save(function(err) {
-                if (err) {
-                    console.log(err);
-                    response.render("../views/users/create");
-                } else {
-                    console.log("Successfully created an Users.");
-                    res.send(users);
-                }
-            })
-
-        }
-
+        gender: req.body.gender,
+        pan: req.body.pan,
+        adhar: req.body.adhar,
+        birthdate: req.body.birthdate,
     })
+    console.log(user);
+    user.setAprooved("Not Aprooved");
+    user.save((err, user) => {
+        if (err) {
+            res.send({
+                message: "Error happended", err
+            })
+        } else {
+            console.log("user registered succesfully");
+            res.send(user).status(200);
+        };
+    });
+}
 
 
-};
+
+
+
+// // Save new Users
+// customerController.save = function(req, res) {
+
+//     var users = new Users(req.body);
+//     const schema = Joi.object().keys({
+//         title: Joi.string(),
+//         firstname: Joi.string(),
+//         lastname: Joi.string(),
+//         email: Joi.string(),
+//         phone: Joi.number(),
+//         address: Joi.string(),
+//         adhar: Joi.number(),
+//         policy: Joi.string(),
+//         nominie: Joi.string(),
+//         relation: Joi.string()
+//             // alternateEmails: Joi.object()
+
+//     });
+//     Joi.validate(req.body, schema, (err, response) => {
+//         if (err) {
+//             console.log('error occured');
+//             console.log(err)
+//         } else {
+//             //password generate for user
+//             password = makeid(10);
+//             console.log("User password is " + password);
+//             users.setPassword(password);
+//             users.save(function(err) {
+//                 if (err) {
+//                     console.log(err);
+//                     response.render("../views/users/create");
+//                 } else {
+//                     console.log("Successfully created an Users.");
+//                     res.send(users);
+//                 }
+//             })
+
+//         }
+
+//     })
+
+
+// };
 /* 
     ! Not in function now
 // Edit an Users
@@ -112,11 +161,11 @@ customerController.edit = function (req, res) {
 */
 
 // Update an Users
-customerController.update = function(req, res) {
+customerController.update = function (req, res) {
 
     Users.findByIdAndUpdate(req.params.id, {
         $set: { name: req.body.name, phone: req.body.phone }
-    }, { useFindAndModify: false }, function(err, Users) {
+    }, { useFindAndModify: false }, function (err, Users) {
         if (err) {
             console.log(err);
         } else {
@@ -125,9 +174,23 @@ customerController.update = function(req, res) {
     });
 };
 
+
+// Update Status Of User Policy by admin
+
+customerController.updateStatus= function (req, res){
+    console.log(req.body.status);
+    Users.findByIdAndUpdate(req.params.id, { $set:{ status: req.body.status }}, { useFindAndModify: false}, function (err,Users){
+        if (err){
+            console.log("Update Error",err);
+        }else{
+            res.send(Users);
+        }
+    })
+}
+
 // Delete an Users
-customerController.delete = function(req, res) {
-    Users.remove({ _id: req.params.id }, function(err) {
+customerController.delete = function (req, res) {
+    Users.remove({ _id: req.params.id }, function (err) {
         if (err) {
             console.log(err);
         } else {
@@ -142,8 +205,8 @@ customerController.delete = function(req, res) {
 
 //register api for custmer
 // update password an Users
-customerController.registerNewPassword = function(req, res) {
-    Users.findOne({ "email": req.params.email }, function(err, users) {
+customerController.registerNewPassword = function (req, res) {
+    Users.findOne({ "email": req.params.email }, function (err, users) {
         if (!users) {
             res.send("Email  Not Found !! ");
 
@@ -156,7 +219,7 @@ customerController.registerNewPassword = function(req, res) {
                 newpassword = req.body.newpassword;
                 users.setPassword(newpassword);
 
-                users.save(function(err) {
+                users.save(function (err) {
                     if (err) {
                         console.log(err);
                         res.send(err)

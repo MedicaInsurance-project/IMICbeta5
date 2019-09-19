@@ -21,15 +21,17 @@ export class AdminLoginComponent implements OnInit {
 
   ngOnInit() {
     this.login = this.formBuilder.group({
-      seviceUsername: ['', Validators.required],
-      sevicePassword: ['', Validators.required]
+      adminUsername: ['', Validators.required],
+      adminPassword: ['', Validators.required]
     });
   }
   onAdminSubmit() {
+
+    console.log(this.login.value)
     this._authService.adminlogin(this.login.value)
       .subscribe(res => {
-
-        this.routes.navigate(['admin/dashboard'], { replaceUrl: true });
+        console.log(res);
+        this.routes.navigate(['admin/dashboard']);
       });
   }
 }

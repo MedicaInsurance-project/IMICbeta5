@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>user-profile works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("{{title}}<br>\r\n{{firstname}}<br>\r\n{{lastname}}<br>\r\n{{address}}<br>\r\n{{adhar}}<br>\r\n{{nominie}}<br>\r\n{{phone}}<br>\r\n{{policy}}<br>\r\n{{relation}}<br>\r\n{{email}}<br>\r\n");
 
 /***/ }),
 
@@ -462,13 +462,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserProfileComponent", function() { return UserProfileComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_home_data_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/home/data.service */ "./src/app/home/data.service.ts");
+
 
 
 let UserProfileComponent = class UserProfileComponent {
-    constructor() { }
+    constructor(dataService) {
+        this.dataService = dataService;
+        this.messages = [];
+        this.subscription = this.dataService.getMessage().subscribe(message => {
+            if (message) {
+                this.messages.push(message);
+                this.firstname = message.text.firstname;
+                this.lastname = message.text.lastname;
+                this.address = message.text.address;
+                this.adhar = message.text.adhar;
+                this.nominie = message.text.nominie;
+                this.phone = message.text.phone;
+                this.policy = message.text.policy;
+                this.relation = message.text.relation;
+                this.email = message.text.email;
+                this.title = message.text.title;
+            }
+            else {
+                // clear messages when empty message received
+                this.messages = [];
+            }
+        });
+    }
     ngOnInit() {
     }
 };
+UserProfileComponent.ctorParameters = () => [
+    { type: src_app_home_data_service__WEBPACK_IMPORTED_MODULE_2__["DataService"] }
+];
 UserProfileComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-user-profile',

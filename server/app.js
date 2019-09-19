@@ -33,6 +33,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var contactus = require('./routes/contactUs');
 var agent = require('./routes/agentRoute');
+var admin = require('./routes/admin')
 var app = express();
 
 var env = process.env.NODEJSENV || 'localhost';
@@ -126,6 +127,7 @@ app.get('/*',(req,res)=>res.sendFile(path.join(__dirname)));
 app.use('/users', users);
 app.use('/contactus', contactus);
 app.use('/agent',agent);
+app.use('/admin',admin)
 
 
 // error handler
