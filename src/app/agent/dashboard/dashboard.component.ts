@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/home/data.service';
+import { Subscription } from 'rxjs';
+import { AgentserviceService } from '../agentservice.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,15 +10,37 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  messages: any[] = [];
+  subscription: Subscription;
+  myData ={ }
+  first_name;
 
-  constructor( private routes: Router) { }
+  constructor( private routes: Router, private _agentService: AgentserviceService, private dataService: DataService) {
 
+    this.subscription = this.dataService.getMessage().subscribe(message => {
+      if (message) {
+      this.messages.push(message);
+      console.log(message);
+      console.log("Message",message.text.email);
+      this.first_name = message.text.first_name;
+      console.log(this.first_name);
+
+      } else {
+      // clear messages when empty message received
+      this.messages = [];
+      }
+      });
+
+   }
+
+
+
+  
   ngOnInit() {
   }
-
-  submitLogout(){
-    localStorage.removeItem('token');
-    this.routes.navigate(['home/agent-login']);
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
+ 
 
 }

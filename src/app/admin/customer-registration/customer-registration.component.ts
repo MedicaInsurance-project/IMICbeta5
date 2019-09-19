@@ -10,6 +10,11 @@ import { AgentserviceService } from '../agentservice.service';
 export class CustomerRegistrationComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
+
+  date = new Date();
+
+  maxDate = (new Date().getFullYear()).toString() + "-0" + (new Date().getMonth() + 1).toString() + "-" + (new Date().getDate()).toString();
+
   constructor(private fb: FormBuilder,
     // tslint:disable-next-line:variable-name
     private routes: Router,
@@ -25,6 +30,7 @@ export class CustomerRegistrationComponent implements OnInit {
       phone: ['', [Validators.required, Validators.minLength(10)]],
       address: ['', Validators.required],
       adhar: ['', [Validators.required, Validators.minLength(12)]],
+      birthdate:['' ,Validators.required],
       policy: ['', Validators.required],
       nominie: ['', Validators.required],
       relation: ['', Validators.required],
@@ -41,7 +47,7 @@ export class CustomerRegistrationComponent implements OnInit {
 
 
   }
-  get f() { return this.registerForm.controls; }
+  // get f() { return this.registerForm.controls; }
 
   onSubmit() {
 
@@ -61,6 +67,9 @@ export class CustomerRegistrationComponent implements OnInit {
 
   }
 
+  dateChange(event) {
+    console.log(event);
+              }
 
   onReset() {
     this.submitted = false;

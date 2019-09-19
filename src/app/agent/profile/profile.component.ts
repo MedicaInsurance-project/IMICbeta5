@@ -11,14 +11,16 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+ 
 
   messages: any[] = [];
   subscription: Subscription;
   myData ={ }
-  email
-  firstName
-  lastName
-  phone
+  first_name;
+  last_name;
+  email;
+  phone;
+  
   constructor( private _agentService: AgentserviceService, private dataService: DataService) {
 
     this.subscription = this.dataService.getMessage().subscribe(message => {
@@ -27,9 +29,11 @@ export class ProfileComponent implements OnInit {
       console.log(message);
       console.log("Message",message.text.email);
       this.email = message.text.email;
-      this.firstName = message.text.firstName;
-      this.lastName = message.text.lastName;
+      this.first_name = message.text.first_name;
+      this.last_name = message.text.last_name;
       this.phone = message.text.phone;
+  
+
       } else {
       // clear messages when empty message received
       this.messages = [];

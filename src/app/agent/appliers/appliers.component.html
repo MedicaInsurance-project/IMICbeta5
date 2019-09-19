@@ -1,0 +1,63 @@
+<!-- <div class="container-fluid" id="tb">
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <!-- <th scope="col">s.no</th>
+
+                <th scope="col">Title</th>
+
+                <th scope="col">First-name</th>
+                <th scope="col">Last-name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <!-- <th>Actions</th> -->
+<!-- </tr>
+</thead>
+<tbody *ngFor="let data of myData; let i=index">
+    <tr>  -->
+<!-- <td>{{i+1 }}</td>
+
+                <td>{{data.fullname}}</td>
+                <td>{{data.email}}</td>
+                <td>{{data.contact}}</td>
+                <td>{{data.message}}</td>
+                <td>
+                    <button type="submit" class="btn btn-secondary" (click)="delete(data._id)">Delete</button> &nbsp;
+                    <button type="submit" class="btn btn-primary"><a  class="text-white" routerLink='viewUser/{{data._id}}'>View</a></button>
+                </td> -->
+
+
+<!-- <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">{{data.fullname}}</li>
+                        <li class="list-group-item">{{data.email}}</li>
+                        <li class="list-group-item">{{data.contact}}</li>
+                        <li class="list-group-item">{{data.message}}</li>
+                        <button class="btn btn-secondary">Delete</button>
+                    </ul>
+                </div>
+            </tr>
+            <br>
+        </tbody>
+    </table>
+</div> -->
+
+<div class="card-deck w-75 p-3 mx-auto" style="width: 200px;" *ngFor="let data of myData; let i=index">
+    <div class="card">
+
+        <div class="card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Name: {{data.fullname}}</li>
+                <li class="list-group-item">Email: {{data.email}}</li>
+                <li class="list-group-item">Phone-no: {{data.contact}}</li>
+                <li class="list-group-item">Message: {{data.message}}</li>
+                <button class="btn btn-info" (click)="deleteApplier(data._id)">Delete</button>
+            </ul>
+        </div>
+    </div>
+
+</div>

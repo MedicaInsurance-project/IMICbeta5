@@ -1,4 +1,3 @@
-
 //  person visiting the website and contacting for help
 //  contact to website api 
 
@@ -14,8 +13,8 @@ var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         // username of gmail and password 
-        user: 'harshddevil.hk93@gmail.com',  
-        pass: 'Jackalpower1@'                  
+        user: 'harshddevil.hk93@gmail.com',
+        pass: 'Jackalpower1@'
     }
 });
 
@@ -44,7 +43,7 @@ function sendEmail(mail) {
         </h2>`
 
     };
-    transporter.sendMail(mailOptions, function (error, info) {
+    transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
             console.log(error);
         } else {
@@ -57,12 +56,12 @@ function sendEmail(mail) {
 var contactusController = {};
 
 //contact us api 
-contactusController.save = function (req, res) {
+contactusController.save = function(req, res) {
     let contactus = new ContactUs({
         fullname: req.body.fullname,
         email: req.body.email,
         contact: req.body.contact,
-        message:req.body.message
+        message: req.body.message
     });
 
     // mail object is used to be passed in the parameter of sendEmail() f
@@ -79,7 +78,7 @@ contactusController.save = function (req, res) {
             });
         } else {
             res.send(contactus)
-            //sendEmail(mail);
+                //sendEmail(mail);
 
         };
     });
@@ -87,13 +86,12 @@ contactusController.save = function (req, res) {
 
 //fetching data from the database for user that contacted 
 //get api for  contact us 
-contactusController.list = function (err, res) {
+contactusController.list = function(err, res) {
 
-    ContactUs.find({}).exec(function (err, contactus) {
+    ContactUs.find({}).exec(function(err, contactus) {
         if (err) {
             console.log("Error:", err);
-        }
-        else {
+        } else {
             res.send(contactus);
         }
     });
@@ -103,19 +101,22 @@ contactusController.list = function (err, res) {
 //fetching data from the database for user that contacted and deleting them
 //delete  api for contact us 
 // Delete an employee
-contactusController.delete = function (req, res) {
+contactusController.delete = function(req, res) {
 
-    ContactUs.deleteOne({ _id: req.params.id }, function (err) {
+    ContactUs.deleteOne({ _id: req.params.id }, function(err) {
         if (err) {
             console.log(err);
-        }
-        else {
+            res.status(404).send({
+                message: "ID NOT FOUND"
+            })
+        } else {
             console.log("Person data deleted deleted!");
-            res.redirect("/contactus");
+            res.send({
+                message: "data deleted successfully !!"
+            })
         }
     });
 }
 
 //exporting the contact us controller 
 module.exports = contactusController;
-

@@ -18,6 +18,8 @@ export class AuthService {
  _url3 = 'http://localhost:8080/contactus/create';
 
  _verifyEmailURL = 'http://localhost:8080/agent/forgotPassword';
+
+ 
   constructor(private http: HttpClient) { }
 
   adminlogin(admin: adminLogin) {
