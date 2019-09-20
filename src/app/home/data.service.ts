@@ -13,7 +13,8 @@ export class DataService {
 public subject = new BehaviorSubject<any>(null);
 
 sendMessage(message: string) {
-    console.log("message",message);
+
+    // console.log(message)
 this.subject.next({ text: message });
 }
 

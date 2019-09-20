@@ -16,6 +16,7 @@ export class CustomerListComponent implements OnInit {
 
 
     this._adminService.get_Users()
+
       .subscribe(
         res => {
           console.log(this.myData);
@@ -44,10 +45,17 @@ export class CustomerListComponent implements OnInit {
           Array.prototype.slice.call(data, 1);
           
           this.refreshUsersList();
+
         },
         error => console.error(error)
       );
 
+  }
+  clicked = false;
+
+  actionMethod() {
+    this.clicked = true;
+    console.log("actionMethod was called!");
   }
 
   accept(_id: string) {
@@ -58,7 +66,7 @@ export class CustomerListComponent implements OnInit {
           // debugger; 
           // Array.prototype.slice.call(data, 2);
           this.refreshUsersList();
-
+         this.actionMethod() ;
           console.log(this.status)
 
         },
