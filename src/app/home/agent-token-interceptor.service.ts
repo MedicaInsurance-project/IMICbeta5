@@ -10,12 +10,22 @@ export class AgentTokenInterceptorService implements HttpInterceptor {
   constructor( private injector: Injector) { }
 
   intercept(req, next){
-    let authService = this.injector.get(AuthService);
-    let tokenizedReq = req.clone({
+    if(!!localStorage.getItem('token')){
+      let authService = this.injector.get(AuthService);
+      let tokenizedReq = req.clone({
       setHeaders:{
         Authorization: `Bearer ${authService.getToken()}` 
       }
     })
     return next.handle( tokenizedReq )
+  }else{
+    let authService = this.injector.get(AuthService);
+      let tokenizedReq = req.clone({
+      setHeaders:{
+        Authorization: `Bearer ${authService.getUserToken()}` 
+      }
+    })
+    return next.handle( tokenizedReq )
+  }
   }
 }

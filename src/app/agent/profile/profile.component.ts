@@ -29,12 +29,14 @@ export class ProfileComponent implements OnInit {
         this.myData=JSON.parse(message.text)
       this.messages.push(message);
 
+
       console.log(message);
       console.log("Message",message);
       this.email = this.myData['email'];
       this.first_name =this.myData['first_name'];
       this.last_name =this.myData['last_name'];
       this.phone = this.myData['phone'];
+
   
 
       } else {

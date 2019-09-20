@@ -12,4 +12,8 @@ export class PolicyComponent implements OnInit {
   ngOnInit() {
   }
 
+  claim(){
+    alert('applied for claim');
+  }
+
 }

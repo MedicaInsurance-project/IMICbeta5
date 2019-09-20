@@ -49,6 +49,11 @@ export class AuthService {
   getToken(){
     return localStorage.getItem('token');
   }
+
+  getUserToken(){
+    return localStorage.getItem('userToken');
+  }
+
   verifyEmail(email){
     return this.http.post<any>(this._verifyEmailURL, email)
   }
