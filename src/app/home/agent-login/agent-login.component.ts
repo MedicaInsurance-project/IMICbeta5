@@ -50,7 +50,7 @@ export class AgentLoginComponent implements OnInit {
           
           
           localStorage.setItem('ID',res.agent._id )
-          localStorage.setItem('agentName',res.agent.first_name )
+          localStorage.setItem('Agent',JSON.stringify(res.agent) );
           this.agentName = localStorage.getItem('agentName');
           console.log("agentLOcal Value",this.agentName);
 

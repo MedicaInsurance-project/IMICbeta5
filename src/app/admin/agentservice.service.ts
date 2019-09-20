@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { register } from './customer-registration/register';
+
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +14,7 @@ export class AgentserviceService {
 
   constructor(private http: HttpClient) { }
 
-  registeration(reg: register) {
-    return this.http.post<any>(this._url, reg);
-  }
+ 
 
   get_Users() {
     return this.http.get(this._urlgetall);

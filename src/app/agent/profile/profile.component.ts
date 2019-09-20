@@ -23,11 +23,11 @@ export class ProfileComponent implements OnInit {
   
   constructor( private _agentService: AgentserviceService, private dataService: DataService) {
 
+    this.dataService.sendMessage(localStorage.getItem("Agent"));
+
     this.subscription = this.dataService.getMessage().subscribe(message => {
       if (message) {
       this.messages.push(message);
-      console.log(message);
-      console.log("Message",message.text.email);
       this.email = message.text.email;
       this.first_name = message.text.first_name;
       this.last_name = message.text.last_name;

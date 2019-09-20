@@ -177,7 +177,7 @@ customerController.update = function(req, res) {
 // Update Status Of User Policy by admin
 
 customerController.updateStatus = function(req, res) {
-    console.log(req.body.status);
+    console.log("status",req.body.status);
     Users.findByIdAndUpdate(req.params.id, { $set: { status: req.body.status } }, { useFindAndModify: false }, function(err, Users) {
         if (err) {
             console.log("Update Error", err);
@@ -189,7 +189,6 @@ customerController.updateStatus = function(req, res) {
             Users.save(function(err) {
                 if (err) {
                     console.log(err);
-                    response.render("../views/users/create");
                 } else {
                     console.log("Successfully created an Users.");
                     res.send(Users);

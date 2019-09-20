@@ -3,8 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
-import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ViewUserComponent } from '../admin/view-user/view-user.component';
 
 
 const routes: Routes = [
@@ -17,7 +17,9 @@ const routes: Routes = [
       { path: 'dashboard' , component: DashboardComponent },
       { path: 'profile' , component: ProfileComponent },
       { path: 'customer-list' , component: CustomerListComponent },
-      { path: 'customer-registration' , component: CustomerRegistrationComponent }
+      { path: 'customer-list/view-user/:id' , component: ViewUserComponent },
+
+   
     ]
   }
 ];

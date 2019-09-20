@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AgentserviceService } from '../agentservice.service';
+import { AdminServiceService } from '../admin-service.service';
 
 @Component({
   selector: 'app-customer-list',
@@ -8,13 +8,70 @@ import { AgentserviceService } from '../agentservice.service';
 })
 export class CustomerListComponent implements OnInit {
   myData: {};
-    constructor(private _agentService: AgentserviceService) { }
+  status = { "status": "approved" }
+
+  constructor(private _adminService: AdminServiceService) { }
 
   ngOnInit() {
-    this._agentService.get_Users()
+
+
+    this._adminService.get_Users()
       .subscribe(
-        res => this.myData=res,
+        res => {
+          console.log(this.myData);
+          this.myData = res
+        },
         error => console.error(error)
       );
   }
+
+  refreshUsersList() {
+    this._adminService.get_Users().subscribe((res) => {
+      this.myData = res;
+
+    }
+
+
+    )
+
+  }
+
+  delete(_id: string) {
+    this._adminService.delete_row(_id)
+      .subscribe(
+        data => {
+          console.log(_id)
+          Array.prototype.slice.call(data, 1);
+          
+          this.refreshUsersList();
+        },
+        error => console.error(error)
+      );
+
+  }
+
+  accept(_id: string) {
+    this._adminService.accept_user(_id, this.status)
+      .subscribe(
+        data => {
+          console.log(data);
+          // debugger; 
+          // Array.prototype.slice.call(data, 2);
+          this.refreshUsersList();
+
+          console.log(this.status)
+
+        },
+        error => {
+          console.error(error)
+        }
+      )
+
+  }
+
+
+
+
+
+
 }
