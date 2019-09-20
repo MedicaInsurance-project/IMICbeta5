@@ -5,11 +5,11 @@ import { AdminComponent } from './admin.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CustomerRegistrationComponent } from './customer-registration/customer-registration.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewUserComponent } from './view-user/view-user.component';
 
 
 @NgModule({
@@ -17,10 +17,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     ProfileComponent,
-    CustomerRegistrationComponent,
     CustomerListComponent,
     DashboardComponent,
     SideNavComponent,
+    ViewUserComponent,
   ],
   imports: [
     CommonModule,

@@ -177,7 +177,8 @@ customerController.update = function(req, res) {
 // Update Status Of User Policy by admin
 
 customerController.updateStatus = function(req, res) {
-    console.log(req.body.status);
+    console.log("id", req.params.id);
+    console.log("status", req.body.status);
     Users.findByIdAndUpdate(req.params.id, { $set: { status: req.body.status } }, { useFindAndModify: false }, function(err, Users) {
         if (err) {
             console.log("Update Error", err);

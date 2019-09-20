@@ -39,9 +39,7 @@ var customerSchema = new mongoose.Schema({
     password: {
         type: String
     },
-    status: {
-        type: String
-    }
+    status: String
 });
 
 

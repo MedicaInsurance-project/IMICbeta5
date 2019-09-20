@@ -10,7 +10,7 @@ module.exports.userLoginPOST = function(req, res, next) {
 };
 
 // Get all Userss
-router.get('/', verify, function(req, res) {
+router.get('/', function(req, res) {
     Users.list(req, res);
 });
 

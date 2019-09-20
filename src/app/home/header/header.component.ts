@@ -20,14 +20,17 @@ export class HeaderComponent implements OnInit {
 
 
   constructor(private _authService : AuthService, private dataService: DataService) {
-
+    this.dataService.sendMessage(localStorage.getItem('agentName'));
     this.subscription = this.dataService.getMessage().subscribe(message => {
       if (message) {
-      this.messages.push(message);
-      console.log(message);
+        this.myData=JSON.parse(message.text)
+        this.messages.push(message);
       
-      this.first_name = message.text.first_name;
-      console.log(this.first_name);
+        console.log(message);
+        console.log("Message",message);
+       
+        this.first_name =this.myData['first_name'];
+        console.log(this.first_name);
 
       } else {
       // clear messages when empty message received
