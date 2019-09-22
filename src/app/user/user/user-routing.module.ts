@@ -7,6 +7,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { PolicyComponent } from './policy/policy.component';
 import { ApplyForClaimsComponent } from './apply-for-claims/apply-for-claims.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
+import { UserGuard } from '../user.guard';
 
 
 const routes: Routes = [
@@ -22,19 +23,19 @@ const routes: Routes = [
         path: 'home' , component : UserHomeComponent
       },
       {
-        path : 'dashboard', component : UserDashboardComponent
+        path : 'dashboard', component : UserDashboardComponent, canActivate: [UserGuard]
       },
       {
-        path: 'user-profile', component: UserProfileComponent
+        path: 'user-profile', component: UserProfileComponent, canActivate: [UserGuard]
       },
       {
-        path: 'policy', component: PolicyComponent
+        path: 'policy', component: PolicyComponent, canActivate: [UserGuard]
       },
       {
-        path: 'apply-for-claims', component: ApplyForClaimsComponent
+        path: 'apply-for-claims', component: ApplyForClaimsComponent, canActivate: [UserGuard]
       },
       {
-        path: 'updatePassword', component: UpdatePasswordComponent
+        path: 'updatePassword', component: UpdatePasswordComponent, canActivate: [UserGuard]
       }
     ]
   }

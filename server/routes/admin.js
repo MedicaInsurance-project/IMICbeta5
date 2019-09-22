@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
+const jwt = require('jsonwebtoken');
 
 router.post('/adminLogin', (req, res) => {
     username = req.body.adminUsername;
     password = req.body.adminPassword;
     if (username === "admin") {
         if (password === "admin") {
-            res.send({ mssg: "logged in successfully" });
+            var payload = { subject: "admin" };
+            var token = jwt.sign(payload, 'adminKey', { expiresIn: 60 });
+            res.header('auth-token', token);
+            res.send({token});
         } else {
             res.status(401).send('Unauthorized Access');
         }

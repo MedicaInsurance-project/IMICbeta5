@@ -5,6 +5,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ViewUserComponent } from '../admin/view-user/view-user.component';
+import { AdminGuard } from './admin.guard';
+import { ViewAgentComponent } from './view-agent/view-agent.component';
 
 
 const routes: Routes = [
@@ -14,10 +16,11 @@ const routes: Routes = [
       // {
       // path : '' , redirectTo: 'dashboard' , pathMatch : 'full'
       // },
-      { path: 'dashboard' , component: DashboardComponent },
-      { path: 'profile' , component: ProfileComponent },
-      { path: 'customer-list' , component: CustomerListComponent },
-      { path: 'customer-list/view-user/:id' , component: ViewUserComponent },
+      { path: 'dashboard' , component: DashboardComponent, canActivate: [AdminGuard] },
+      { path: 'profile' , component: ProfileComponent, canActivate: [AdminGuard] },
+      { path: 'customer-list' , component: CustomerListComponent, canActivate: [AdminGuard] },
+      { path: 'customer-list/view-user/:id' , component: ViewUserComponent, canActivate: [AdminGuard] },
+      { path: 'view-agent', component: ViewAgentComponent,canActivate: [AdminGuard]}
 
    
     ]

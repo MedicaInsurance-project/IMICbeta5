@@ -97,53 +97,6 @@ customerController.createNew = function(req, res, next) {
     });
 }
 
-
-
-
-
-// // Save new Users
-// customerController.save = function(req, res) {
-
-//     var users = new Users(req.body);
-//     const schema = Joi.object().keys({
-//         title: Joi.string(),
-//         firstname: Joi.string(),
-//         lastname: Joi.string(),
-//         email: Joi.string(),
-//         phone: Joi.number(),
-//         address: Joi.string(),
-//         adhar: Joi.number(),
-//         policy: Joi.string(),
-//         nominie: Joi.string(),
-//         relation: Joi.string()
-//             // alternateEmails: Joi.object()
-
-//     });
-//     Joi.validate(req.body, schema, (err, response) => {
-//         if (err) {
-//             console.log('error occured');
-//             console.log(err)
-//         } else {
-//             //password generate for user
-//             password = makeid(10);
-//             console.log("User password is " + password);
-//             users.setPassword(password);
-//             users.save(function(err) {
-//                 if (err) {
-//                     console.log(err);
-//                     response.render("../views/users/create");
-//                 } else {
-//                     console.log("Successfully created an Users.");
-//                     res.send(users);
-//                 }
-//             })
-
-//         }
-
-//     })
-
-
-// };
 /* 
     ! Not in function now
 // Edit an Users
@@ -247,5 +200,28 @@ customerController.registerNewPassword = function(req, res) {
     })
 
 }
+
+
+//fetching users from database, aprooved by admin 
+customerController.aproovedUsers = function(req,res){
+    Users.find({ status: "Approved"}, function(err,users){
+        if(!users){
+            res.send("No users found");
+        } else{
+            res.send(users);
+        }
+    })
+}
+
+//Apply for claim
+// customerController.applyForClaim = function(req,res){
+//     Users.findByIdAndUpdate(req.params.id,{ $set: { claim: req.body.claim } }, { useFindAndModify: false}, function(err,Users){
+//         if(err){
+//             console.log("error",err);
+//         } else {
+
+//         }
+//     })
+// }
 
 module.exports = customerController;

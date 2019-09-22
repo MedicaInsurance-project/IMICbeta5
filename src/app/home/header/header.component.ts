@@ -29,8 +29,7 @@ export class HeaderComponent implements OnInit {
         console.log(message);
         console.log("Message",message);
        
-        this.first_name =this.myData['first_name'];
-        console.log(this.first_name);
+        // this.first_name =this.myData['first_name'];
 
       } else {
       // clear messages when empty message received

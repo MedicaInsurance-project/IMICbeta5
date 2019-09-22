@@ -30,7 +30,8 @@ export class AdminLoginComponent implements OnInit {
     console.log(this.login.value)
     this._authService.adminlogin(this.login.value)
       .subscribe(res => {
-        console.log(res);
+        console.log(res.token);
+        localStorage.setItem('adminToken',res.token); 
         this.routes.navigate(['admin/dashboard']);
       });
   }

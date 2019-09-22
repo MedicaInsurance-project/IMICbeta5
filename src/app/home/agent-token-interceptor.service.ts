@@ -19,13 +19,23 @@ export class AgentTokenInterceptorService implements HttpInterceptor {
     })
     return next.handle( tokenizedReq )
   }else{
-    let authService = this.injector.get(AuthService);
+    if(!!localStorage.getItem('UserToken')){
+      let authService = this.injector.get(AuthService);
       let tokenizedReq = req.clone({
       setHeaders:{
         Authorization: `Bearer ${authService.getUserToken()}` 
       }
     })
     return next.handle( tokenizedReq )
+    }else{
+      let authService = this.injector.get(AuthService);
+      let tokenizedReq = req.clone({
+      setHeaders:{
+        Authorization: `Bearer ${authService.getAdminToken()}` 
+      }
+    })
+    return next.handle( tokenizedReq )
+    }
   }
   }
 }

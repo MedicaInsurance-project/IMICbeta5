@@ -12,10 +12,11 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { ApplyForClaimsComponent } from './apply-for-claims/apply-for-claims.component';
 import { UpdatePasswordComponent } from './update-password/update-password.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   // tslint:disable-next-line:max-line-length
-  declarations: [UserHomeComponent, UserNavBarComponent, UserFooterComponent, UserDashboardComponent, PolicyComponent, UserComponent, UserProfileComponent, ApplyForClaimsComponent, UpdatePasswordComponent],
+  declarations: [UserHomeComponent, UserNavBarComponent, UserFooterComponent, UserDashboardComponent, PolicyComponent, UserComponent, UserProfileComponent, ApplyForClaimsComponent, UpdatePasswordComponent, HeaderComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,

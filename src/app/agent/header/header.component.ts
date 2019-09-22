@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   }
   submitLogout(){
     localStorage.removeItem('token');
+    localStorage.removeItem('agentName');
     this.routes.navigate(['home/agent-login']);
   }
 

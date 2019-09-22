@@ -8,7 +8,7 @@ import { AdminServiceService } from '../admin-service.service';
 })
 export class CustomerListComponent implements OnInit {
   myData: {};
-  status = { "status": "approved" }
+  status = { "status": "Approved" }
 
   constructor(private _adminService: AdminServiceService) { }
 
