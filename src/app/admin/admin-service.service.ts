@@ -18,6 +18,10 @@ export class AdminServiceService {
 
   _urlAccept = 'http://localhost:8080/users/updateStatus'
 
+  getClaimUser = 'http://localhost:8080/users/claimUsers'
+
+  _approveClaim = 'http://localhost:8080/users/approveClaim'
+
   constructor(private http: HttpClient) { }
 
  
@@ -25,6 +29,10 @@ export class AdminServiceService {
 
   get_Users() {
     return this.http.get(this._urlgetall);
+  }
+
+  getClaimedUsers(){
+    return this.http.get(this.getClaimUser);
   }
 
 
@@ -42,5 +50,9 @@ export class AdminServiceService {
       console.log(status);
       // debugger;
       return this.http.put(this._urlAccept +'/'+ _id , status);
+    }
+
+    approveClaim(_id: string, claim){
+      return this.http.post(this._approveClaim + `/${_id}`,claim);
     }
 }

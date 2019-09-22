@@ -21,7 +21,9 @@ export class AuthService {
 
  _verifyEmailURL = 'http://localhost:8080/agent/forgotPassword';
 
- aproovedUser = 'http://localhost:8080/users/aproovedUsers'
+ aproovedUser = 'http://localhost:8080/users/aproovedUsers';
+
+ applyCLaim = 'http://localhost:8080/users/applyClaim'
 
  
   constructor(private http: HttpClient) { }
@@ -70,6 +72,10 @@ export class AuthService {
 
   verifyEmail(email){
     return this.http.post<any>(this._verifyEmailURL, email)
+  }
+
+  applyClaim(id: string, claim:any){
+    return this.http.post(this.applyCLaim + `/${id}`, claim)
   }
 
   

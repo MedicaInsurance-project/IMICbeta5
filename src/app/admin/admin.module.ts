@@ -11,6 +11,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { ViewAgentComponent } from './view-agent/view-agent.component';
+import { ApprovedPolicyComponent } from './approved-policy/approved-policy.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ViewAgentComponent } from './view-agent/view-agent.component';
     SideNavComponent,
     ViewUserComponent,
     ViewAgentComponent,
+    ApprovedPolicyComponent,
   ],
   imports: [
     CommonModule,

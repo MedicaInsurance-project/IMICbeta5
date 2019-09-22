@@ -87,6 +87,21 @@ router.put('/updateStatus/:id', function(req, res, next) {
 // ==> http://localhost:8080/users/aproovedUsers
 router.get('/aproovedUsers', function(req,res){
   Users.aproovedUsers(req,res);
+});
+
+//Apply for claims
+router.post('/applyClaim/:id', function(req,res){
+  Users.applyForClaim(req,res);
+});
+
+//approve the claims
+// ==> http://localhost:8080/users/approveClaim
+router.post('/approveClaim/:id', function(req,res){
+  Users.approveClaim(req,res);
+});
+
+router.get('/claimUsers', function(req,res){
+  Users.claimUsers(req,res);
 })
 
 

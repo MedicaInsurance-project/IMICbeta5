@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/home/data.service';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/home/auth.service';
 
 @Component({
   selector: 'app-apply-for-claims',
@@ -16,8 +17,10 @@ export class ApplyForClaimsComponent implements OnInit {
   policyName;
   policyPremium;
   policyAmount;
+  id;
+  claim = { "claim": "requested"};
 
-  constructor( private dataService: DataService ) { 
+  constructor( private dataService: DataService, private _authService: AuthService ) { 
 
     this.dataService.sendMessage(localStorage.getItem('userdata'));
     this.subscription = this.dataService.getMessage().subscribe(message => {
@@ -30,6 +33,7 @@ export class ApplyForClaimsComponent implements OnInit {
         this.policy = this.myData['policy'];
          this.policyName=this.policy['policyName'];
          this.policyAmount=this.policy['policyAmount'];
+         this.id = this.myData['_id'];
          this.policyPremium=this.policy['premium'];
 
 
@@ -48,5 +52,12 @@ export class ApplyForClaimsComponent implements OnInit {
 }
 
   ngOnInit() {
+  }
+
+  applyClick(){
+    this._authService.applyClaim(this.id, this.claim )
+    .subscribe(
+      res=> alert("Approved")
+    )
   }
 }

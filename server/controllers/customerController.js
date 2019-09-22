@@ -214,14 +214,47 @@ customerController.aproovedUsers = function(req,res){
 }
 
 //Apply for claim
-// customerController.applyForClaim = function(req,res){
-//     Users.findByIdAndUpdate(req.params.id,{ $set: { claim: req.body.claim } }, { useFindAndModify: false}, function(err,Users){
-//         if(err){
-//             console.log("error",err);
-//         } else {
+customerController.applyForClaim = function(req,res){
+    Users.findByIdAndUpdate(req.params.id,{ $set: { claim: req.body.claim } }, { useFindAndModify: false}, function(err,user){
+        if(err){
+            console.log("error",err);
+        } else {
+            user.save(function(error){
+                if(error){
+                    res.send("Unauthorized Access");
+                } else {
+                    res.send(user);
+                }
+            })
+        }
+    })
+}
 
-//         }
-//     })
-// }
+
+customerController.approveClaim = function(req,res){
+    Users.findByIdAndUpdate(req.params.id, { $set: { claim: req.body.claim } }, { useFindAndModify: false}, function(err,user){
+        if(err){
+            console.log("error",err);
+        } else{
+            user.save(function(error){
+                if(error){
+                    res.send("Something went wrong");
+                } else {
+                    res.send(user);
+                }
+            })
+        }
+    })
+} 
+
+customerController.claimUsers = function(req,res){
+    Users.find({ claim: "requested"}, function(err,users){
+        if(!users){
+            res.send("No users found");
+        } else{
+            res.send(users);
+        }
+    })
+}
 
 module.exports = customerController;
