@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewUserComponent } from './view-user/view-user.component';
+import { ViewAgentComponent } from './view-agent/view-agent.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { ViewUserComponent } from './view-user/view-user.component';
     DashboardComponent,
     SideNavComponent,
     ViewUserComponent,
+    ViewAgentComponent,
   ],
   imports: [
     CommonModule,

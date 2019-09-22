@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class UserDashboardComponent implements OnInit {
+export class HeaderComponent implements OnInit {
 
   constructor( private routes: Router) { }
 
@@ -15,6 +15,7 @@ export class UserDashboardComponent implements OnInit {
 
   submitLogout(){
     localStorage.removeItem('userToken');
+    localStorage.removeItem('userdata');
     this.routes.navigate(['home/user-login']);
   }
 

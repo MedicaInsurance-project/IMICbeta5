@@ -3,8 +3,7 @@ var router = express.Router();
 const Agent = require('../models/agentModel');
 var cryptography = require('../helper/cryptography');
 const jwt = require('jsonwebtoken');
-const verify =require('../routes/verifyToken')
-
+const verify =require('../routes/verifyToken');
 var agent = require("../controllers/agentController");
 
 
@@ -32,7 +31,7 @@ router.post('/agentLogin', (req, res) => {
                     res.status(401).send('Invalid Password');
                 } else {
                     var payload = { subject: agent._id };
-                    var token = jwt.sign(payload, 'secretKey', { expiresIn: 1000 });
+                    var token = jwt.sign(payload, 'secretKey', { expiresIn: 180 });
                     res.header('auth-token', token);
                     res.send({token,agent});
                 }

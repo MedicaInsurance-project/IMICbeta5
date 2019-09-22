@@ -39,8 +39,8 @@ var customerSchema = new mongoose.Schema({
     password: {
         type: String
     },
-    status: String
-
+    status: String,
+    claim: String
 
 });
 

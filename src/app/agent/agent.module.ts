@@ -14,6 +14,7 @@ import { fromEventPattern } from 'rxjs';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewUserComponent } from './view-user/view-user.component';
 import { AppliersComponent } from './appliers/appliers.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap' ;
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { AppliersComponent } from './appliers/appliers.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AgentRoutingModule
+    NgbModule,
+    AgentRoutingModule,
   ]
 })
 export class AgentModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/home/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,35 +10,49 @@ import { DataService } from 'src/app/home/data.service';
 })
 export class UserProfileComponent implements OnInit {
 
+
   messages: any[] = [];
   subscription: Subscription;
 
-  address;
-  adhar;
+  myData;
+  location=[];
+  adhaar;
   email;
   firstname;
   lastname;
-  nominie;
+  address;
+  state;
+  city;
+  country;
+  pin;
   phone;
-  policy;
-  relation
   title;
 
-  constructor( private dataService: DataService) { 
+  constructor( private dataService: DataService, private routes: Router) { 
+
+    this.dataService.sendMessage(localStorage.getItem('userdata'));
 
     this.subscription = this.dataService.getMessage().subscribe(message => {
       if (message) {
+        this.myData=JSON.parse(message.text)
       this.messages.push(message);
-      this.firstname = message.text.firstname;
-      this.lastname = message.text.lastname;
-      this.address = message.text.address;
-      this.adhar = message.text.adhar;
-      this.nominie = message.text.nominie;
-      this.phone = message.text.phone;
-      this.policy = message.text.policy;
-      this.relation = message.text.relation;
-      this.email = message.text.email;
-      this.title = message.text.title;
+      
+      this.firstname = this.myData['firstname'];
+      this.lastname = this.myData['lastname'];
+      this.email = this.myData['email'];
+      this.adhaar = this.myData['adhar'];
+      this.phone = this.myData['phone'];
+      this.title = this.myData['title'];
+      this.location = this.myData['location'];
+      this.address = this.location['address'];
+      this.state = this.location['state'];
+      this.city = this.location['city'];
+      this.pin = this.location['pin'];
+      this.country = this.myData['country'];
+
+      // this.nominie = message.text.nominie;
+      // this.policy = message.text.policy;
+      // this.relation = message.text.relation;
       
 
 
@@ -50,6 +65,10 @@ export class UserProfileComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  backToDash(){
+    this.routes.navigate(['user/dashboard']);
   }
 
 }

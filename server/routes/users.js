@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var Users = require("../controllers/customerController.js");
 var user = require('../controllers/userService');
-const verify = require('./verifyToken');
+const agentVerify = require('./verifyToken');
+const userVerify = require('../routes/userVerifyToken');
+
 
 module.exports.userLoginPOST = function(req, res, next) {
     console.log('post method');
@@ -43,7 +45,7 @@ router.get('/create', function (req, res) {
 // });
 
 // http://localhost:8080/users/createNew
-router.post('/createNew', function(req, res) {
+router.post('/createNew', agentVerify, function(req, res) {
     Users.createNew(req, res);
 });
 
@@ -78,6 +80,14 @@ router.delete('/delete/:id', function(req, res, next) {
 
 router.put('/updateStatus/:id', function(req, res, next) {
     Users.updateStatus(req, res);
+});
+
+
+//get users with aprooved status
+// ==> http://localhost:8080/users/aproovedUsers
+router.get('/aproovedUsers', function(req,res){
+  Users.aproovedUsers(req,res);
 })
+
 
 module.exports = router;

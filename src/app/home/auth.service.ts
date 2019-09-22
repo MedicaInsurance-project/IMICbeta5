@@ -21,6 +21,8 @@ export class AuthService {
 
  _verifyEmailURL = 'http://localhost:8080/agent/forgotPassword';
 
+ aproovedUser = 'http://localhost:8080/users/aproovedUsers'
+
  
   constructor(private http: HttpClient) { }
 
@@ -39,6 +41,14 @@ export class AuthService {
     return this.http.post<any>(this._url1, agent);
   }
 
+  getAproovedUser(){
+    return this.http.get(this.aproovedUser)
+  }
+
+  adminLoggedIn(){
+    return !!localStorage.getItem('adminToken');
+  }
+
   agentLoggedIn(){
     return !!localStorage.getItem('token');
   }
@@ -54,7 +64,13 @@ export class AuthService {
     return localStorage.getItem('userToken');
   }
 
+  getAdminToken(){
+    return localStorage.getItem('adminToken');
+  }
+
   verifyEmail(email){
     return this.http.post<any>(this._verifyEmailURL, email)
   }
+
+  
 }
